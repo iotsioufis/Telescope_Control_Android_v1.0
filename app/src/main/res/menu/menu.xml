@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<item
+    android:id="@+id/action_Settings"
+    android:title="settings"
+
+    app:titleTextColor="@android:color/background_light"
+    app:showAsAction="never">
+
+
+    <menu>
+
+        <item
+            android:id="@+id/bt_Settings"
+            android:title="Bluetooth Connection"
+
+            app:titleTextColor="@android:color/background_light"
+            app:showAsAction="never"/>
+
+        <item
+            android:id="@+id/mount_settings"
+            android:title="Mount Configuration"
+
+            app:titleTextColor="@android:color/background_light"
+            app:showAsAction="never"/>
+        <item
+            android:id="@+id/location_settings"
+            android:title="Set Location "
+
+            app:titleTextColor="@android:color/background_light"
+            app:showAsAction="never"/>
+        <item
+            android:id="@+id/power_management_settings"
+            android:title="Power Management"
+
+            app:titleTextColor="@android:color/background_light"
+            app:showAsAction="never"/>
+        <item
+            android:id="@+id/advanced_settings"
+            android:title="Advanced Settings"
+
+            app:titleTextColor="@android:color/background_light"
+            app:showAsAction="never"/>
+
+    </menu>
+
+</item>
+
+    <item
+        android:id="@+id/action_About"
+        android:title="about"
+
+        app:titleTextColor="@android:color/background_light"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/icon_bt_connection"
+        android:icon="@drawable/ic_disconnected"
+        android:title="disconnected_icon"
+        app:titleTextColor="@android:color/background_light"
+        app:showAsAction="always"
+        >
+
+    </item>
+
+
+
+</menu>

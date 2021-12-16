@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent">
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_polar_alignment"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        android:layout_width="220dp"
+        android:layout_height="0dp"
+        android:rotation="0"
+        android:scaleX="0.7"
+        android:scaleY="0.7"
+        android:text="Polar alignment \n utility"
+        app:backgroundTint="#2337a8"
+        app:icon="@drawable/ic_polar"
+        app:iconSize="35dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button_get_stars"
+        app:layout_constraintTop_toTopOf="@+id/button_get_stars"
+        app:shapeAppearanceOverlay="@style/General.Button" />
+
+       <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_load_matrix"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        android:layout_width="125dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="30dp"
+        android:rotation="0"
+        android:scaleX="0.7"
+        android:scaleY="0.7"
+        android:text="Load alignment"
+        app:backgroundTint="#2337a8"
+        app:layout_constraintEnd_toStartOf="@+id/button_cancel"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button_begin"
+        app:layout_constraintTop_toBottomOf="@+id/button_get_stars"
+        app:shapeAppearanceOverlay="@style/General.Button" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_next_star"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        android:layout_width="281dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="36dp"
+        android:enabled="false"
+        android:rotation="0"
+        android:scaleX="1"
+        android:scaleY="1"
+        app:backgroundTint="#2337a8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_step3"
+        app:shapeAppearanceOverlay="@style/General.Button" />
+
+    <TextView
+        android:id="@+id/text_step1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:text="Step 1 : Select and move the telescope to a bright star."
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.123"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_load_matrix" />
+
+    <TextView
+        android:id="@+id/text_step2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:text="Step 2 : Center the star and press &quot;STAR CENTERED&quot;."
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_step1" />
+
+    <TextView
+        android:id="@+id/text_step3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:text="Step 3 : Confirm and repeat for the next alignment star .
+
+For more details , press the information button on the top-right corner ."
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.243"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_step2" />
+
+    <TextView
+        android:id="@+id/textViewinfo1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Select Alignment Method:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_show_alignment_help"
+        android:layout_width="68dp"
+        android:layout_height="73dp"
+        android:rotation="0"
+        android:scaleX="0.6"
+        android:scaleY="0.6"
+        android:translationX="12dp"
+        android:translationY="-9dp"
+        app:backgroundTint="#2337a8"
+        app:icon="@android:drawable/ic_dialog_info"
+        app:iconSize="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/Help.Button" />
+
+    <RadioGroup
+        android:id="@+id/radio_group_alignment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:orientation="horizontal"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:theme="@style/RadioButtonStyle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewinfo1">
+
+        <RadioButton
+            android:id="@+id/radio1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:checked="true"
+            android:text="2 stars" />
+
+        <RadioButton
+            android:id="@+id/radio2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="3 stars" />
+
+        <RadioButton
+            android:id="@+id/radio3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="4 stars" />
+
+        <RadioButton
+            android:id="@+id/radio4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="6 stars" />
+
+    </RadioGroup>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_get_stars"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:rotation="0"
+        android:scaleX="0.7"
+        android:scaleY="0.7"
+        android:text="Show \nsuitable stars"
+        app:backgroundTint="#2337a8"
+        app:icon="@drawable/ic_triangle"
+        app:iconSize="33dp"
+        app:layout_constraintEnd_toStartOf="@+id/button_polar_alignment"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radio_group_alignment"
+        app:shapeAppearanceOverlay="@style/General.Button" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_delete_extra_points_west"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="220dp"
+        android:rotation="0"
+        android:scaleX="0.7"
+        android:scaleY="0.71"
+        android:translationX="-12dp"
+        android:text="clear west extra\nalignment points"
+        app:backgroundTint="#2337a8"
+        app:layout_constraintEnd_toStartOf="@+id/button_polar_alignment"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_begin"
+        app:shapeAppearanceOverlay="@style/General.Button"
+       android:visibility="gone" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_delete_extra_points_east"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:rotation="0"
+        android:scaleX="0.7"
+        android:scaleY="0.7"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:translationX="6dp"
+        android:text="clear east extra\nalignment points"
+        app:backgroundTint="#2337a8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button_delete_extra_points_west"
+        app:layout_constraintTop_toTopOf="@+id/button_delete_extra_points_west"
+        app:shapeAppearanceOverlay="@style/General.Button"
+        android:visibility="gone"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_begin"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        android:layout_width="125dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="30dp"
+        android:rotation="0"
+        android:scaleX="0.7"
+        android:scaleY="0.71"
+        android:text="Begin Alignment"
+        app:backgroundTint="#2337a8"
+        app:layout_constraintEnd_toStartOf="@+id/button_load_matrix"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_get_stars"
+        app:shapeAppearanceOverlay="@style/General.Button" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_cancel"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        android:layout_width="125dp"
+        android:layout_height="58dp"
+        android:rotation="0"
+        android:scaleX="0.7"
+        android:scaleY="0.7"
+        android:text="Cancel Alignment"
+        app:backgroundTint="#2337a8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button_load_matrix"
+        app:layout_constraintTop_toTopOf="@+id/button_begin"
+        app:shapeAppearanceOverlay="@style/General.Button" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/frame_alignment_info"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/back_border"
+        android:elevation="40dp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/text_alignment_info"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:text="Multiple star alignment
+            \n\nTo accurately point the telescope to an object , a star alignment is required .
+            \nTo perform a star alignment , select the number of stars to be used as alignment stars.
+            \nSelect BEGIN ALIGNMENT to start the alignment procedure.
+            \nSelect SHOW SUITABLE STARS to get the currently brightest stars located in the Western and Eastern Hemishpere .
+            \nNote that any visible star can be used as an alignment star , not only the ones listed as suitable stars .
+            \n\n\n\nHow to complete an alignment to a star :
+            \n\nThe steps bellow are valid for all types of Star Alignment (2 , 3 , 4 or 6 ) and should be done for every selected alignment star :
+            \n\n1. Select a star from the list of the suitable stars or from the Select Object Screen.
+            \n\n2. Select OK to redirect to the Home Screen
+            \n\n3. In the Home Screen , Select GO TO SELECTED OBJECT . The telescope will move to the object .
+            \n\n4. Select Controls to open the Controls Screen.  If the android device is mounted to the eyepiece , select CAMERA UTILITY to open the Camera Utility Screen .
+            \n\n5. Use the manual controls to center the star in the eyepiece . If the Camera Utility is used , for maximum accuracy while centering , zoom in the star with the left camera slider .
+            \nThe right camera slider controls the rotation of the crosshair . For an easier centering , rotate the crosshair so when the manual controls are pressed , the star moves along the crosshair lines .
+            \nWhen manually centering a star , make sure to always end the manual control moves in the same directions that the GOTO move to that star ended .
+            \nThese ending directions are indicated with red arrows if the 'Show motors' directions of the last Goto move' checkbox is checked in the Controls Screen .
+            \nAlternatively , to avoid manually centering a star , the auto centering tool can be used by pressing AUTO CENTERING in the Camera Utility Screen .
+            \n\n6. When the star is centered , select STAR CENTERED , to redirect to the Alignment Screen .
+            \n\n7. Select CONFIRM STAR X OF Y IS CENTERED  where X is number of the current alignment star and Y is the number of total alignmet stars
+            \n\n8. Repeat for the remaining alignment stars .
+            \n\nAfter the alignment is done , it is automatically saved .
+            \nTo load the previously  saved alignemnt , select LOAD ALIGNMENT.
+            \nAt any moment , the alignment procedure can be canceled by selecting CANCEL ALIGNMENT
+            \n\n2 Stars Alignment :
+            \n\n2 Stars Alignment can be done using 2 bright stars in the East , or 2 bright stars in the West .
+            \nIn both cases , after the alignment is completed , the pointing accuracy will be better on the side that the 2 alignment stars are located .
+            \nAnother possible way of 2 Stars Alignment is by selecting 1 bright star in the East and 1 bright star in the West . The pointing acuracy will be similar on both sides .
+            \nIn the second case , where the two selected stars are in opposite sides of the meridian , the mount should be accurately polar aligned .
+            \nSelect POLAR ALIGNMENT UTILITY and perform a polar alignment before the star alignment .
+            \n\n3 Stars Alignment :
+            \n\n3 Stars Alignment can be done using 3 bright stars in the East , or 3 bright stars in the West .
+            \nIn both cases , after the alignment is completed , the pointing accuracy will be better in the side that the 3 alignment stars are located .
+            \nAnother possible way of 3 Stars Alignment is by selecting 1 bright star in one side of the meridian (East or West ) and 2 bright stars in the other side  .
+            \nThe pointing accuracy will be better on the side that 2 of the 3 alignment stars are located .
+            \nIn the case that 2 stars are selected in one side and 1 star in the other , the mount should be accurately polar aligned .
+            \nSelect POLAR ALIGNMENT UTILITY and perform a polar alignment before the star alignment .
+            \n\n4 Stars Alignment :
+            \n\n4 Stars Alignment can be done using 2 bright stars in the East and 2 bright stars in the West .
+            \nAfter the alignment is completed , the pointing acuracy will be similar on both sides .
+            \n\n6 Stars Alignment :
+            \n\n6 Stars Alignment can be done using 3 bright stars in the East and 3 bright stars in the West .
+            \nAfter the alignment is completed , the pointing acuracy will be similar on both sides .
+            \n\nFor the best pointing accuracy , a 4 stars or a 6 stars alignment should be done .
+            \nAnother advantage of 4 and 6 Stars Alignment is that the pointing accuracy is the best possible for either side of the meridian , with no accurate polar alignment or mount leveling required before the star alignment .
+            \nA rough polar alignment with an arror of no more than 2 degrees is enough for simple visual observation . For precise tracking and imaging , an accurate polar alignment is required .
+            \n\n\nN-star Alignment :
+            \n\nAfter a 2,3,4 or 6 Star Alignment , the pointing accuracy can be improved even more with an N-star alignment .
+            \nselect IMPROVE POINTING ACCURACY from the Home Screen and follow the instructions ,
+            \nor simply , after having any star centered, select STAR CENTERED and add the star as an extra alignment point. Any number on extra alignment stars can be used to improve the pointing accuracy to all regions of the sky .  "             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/frame_alignment_info" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_close_alignment_help"
+            android:layout_width="68dp"
+            android:layout_height="73dp"
+            android:rotation="0"
+            android:scaleX="0.6"
+            android:scaleY="0.6"
+            android:translationX="12dp"
+            android:translationY="-9dp"
+            app:backgroundTint="#2337a8"
+            app:icon="@android:drawable/ic_menu_close_clear_cancel"
+            app:iconTintMode="multiply"
+            app:iconSize="45dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/Help.Button" />
+
+        <Button
+            android:id="@+id/button_hide_alignment_help"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            android:text="Close"
+            app:backgroundTint="#2337a8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_alignment_info" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

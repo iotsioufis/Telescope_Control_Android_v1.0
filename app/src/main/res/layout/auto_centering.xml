@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <org.opencv.android.JavaCameraView
+        android:id="@+id/cameraview"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_auto_center"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        android:layout_width="180dp"
+        android:layout_height="65dp"
+        android:rotation="0"
+        android:scaleX="0.7"
+        android:scaleY="0.7"
+        android:text="auto \ncenter"
+        app:backgroundTint="#2337a8"
+        app:icon="@drawable/ic_accuracy"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button_start_camera_calibration"
+        app:layout_constraintTop_toTopOf="@+id/button_start_camera_calibration"
+        app:shapeAppearanceOverlay="@style/General.Button" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_start_camera_calibration"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        android:layout_width="180dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="4dp"
+        android:rotation="0"
+        android:scaleX="0.7"
+        android:scaleY="0.7"
+        android:text="start calibration"
+        app:backgroundTint="#2337a8"
+        app:icon="@drawable/ic_wrench"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button_auto_center"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cameraview"
+        app:shapeAppearanceOverlay="@style/General.Button" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_star_centered"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        android:layout_width="180dp"
+        android:layout_height="65dp"
+        android:rotation="0"
+        android:scaleX="0.7"
+        android:scaleY="0.7"
+        android:layout_marginTop="20dp"
+        android:text="star\ncentered"
+        app:backgroundTint="#2337a8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_auto_center"
+        app:shapeAppearanceOverlay="@style/General.Button" />
+
+    <TextView
+        android:id="@+id/text_threshold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Threshlod : "
+        android:textColor="@color/colorHighlighted"
+        app:layout_constraintBottom_toTopOf="@+id/slider_threshold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/slider_threshold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="50dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:stepSize="1"
+        android:value="180"
+        android:valueFrom="0"
+        android:valueTo="255"
+        app:haloColor="@color/colorHighlighted"
+        app:haloRadius="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_star_centered"
+        app:thumbColor="#2337a8"
+        app:thumbRadius="16dp"
+        app:tickColorInactive="@color/colorHighlighted"
+        app:trackColorActive="#2337a8"
+        app:trackColorInactive="@color/cardview_dark_background"
+        app:trackHeight="20dp"
+        tools:layout_editor_absoluteY="475dp" />
+
+    <TextView
+        android:id="@+id/text_auto_center_speed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calibration speed : "
+        android:textColor="@color/colorHighlighted"
+        app:layout_constraintBottom_toTopOf="@+id/slider_calibration_auto_center_speed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/slider_calibration_auto_center_speed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="60dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:stepSize="1"
+        android:value="1"
+        android:valueFrom="1"
+        android:valueTo="15"
+        app:haloColor="@color/colorHighlighted"
+        app:haloRadius="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/slider_threshold"
+        app:thumbColor="#2337a8"
+        app:thumbRadius="16dp"
+        app:tickColorInactive="@color/colorHighlighted"
+        app:trackColorActive="#2337a8"
+        app:trackColorInactive="@color/cardview_dark_background"
+        app:trackHeight="20dp"
+        tools:layout_editor_absoluteY="475dp" />
+
+    <TextView
+        android:id="@+id/text_distance_degrees"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:text="Distance from center : - "
+        android:textColor="#29bc34"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/cameraview" />/>
+
+    <TextView
+        android:id="@+id/text_rotation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="40dp"
+        android:text="Rotation : - "
+        android:textColor="#29bc34"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/cameraview" />
+
+    <CheckBox
+        android:id="@+id/checkBox_invert_ra_correction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:buttonTint="@color/colorHighlighted"
+        android:scaleX="1.1"
+        android:scaleY="1.1"
+        android:text="Invert RA \ncorrection"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColorHighlight="@color/colorHighlighted"
+        android:textColorLink="@color/colorHighlighted"
+        app:layout_constraintEnd_toStartOf="@+id/checkBox_invert_dec_correction"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/slider_calibration_auto_center_speed" />
+
+    <CheckBox
+        android:id="@+id/checkBox_invert_dec_correction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:buttonTint="@color/colorHighlighted"
+        android:scaleX="1.1"
+        android:scaleY="1.1"
+        android:text="Invert DEC \ncorrection "
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColorHighlight="@color/colorHighlighted"
+        android:textColorLink="@color/colorHighlighted"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/checkBox_invert_ra_correction"
+        app:layout_constraintTop_toTopOf="@+id/checkBox_invert_ra_correction" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/frame_add_to_alignment_auto_centered"
+        android:background="@drawable/back_border"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginTop="5dp"
+        android:elevation="40dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cameraview">
+
+        <TextView
+            android:textSize="16sp"
+            android:textColor="#676871"
+            android:gravity="center_horizontal"
+            android:id="@+id/text_add_to_alignment_auto_centered"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="10dp"
+            android:text="Star Alignment already done .\n\nAdd this star as an extra alignment point ?   "
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+
+        <Button
+            android:id="@+id/button_add_to_alignment_auto_centered"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:text="add"
+            android:scaleX="0.9"
+            android:scaleY="0.9"
+            app:backgroundTint="#2337a8"
+            app:layout_constraintEnd_toStartOf="@+id/button_cancel_add_to_alignment_auto_centered"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_add_to_alignment_auto_centered"/>
+
+
+
+        <Button
+            android:id="@+id/button_cancel_add_to_alignment_auto_centered"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="CANCEL"
+            android:scaleX="0.9"
+            android:scaleY="0.9"
+            app:backgroundTint="#2337a8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/button_add_to_alignment_auto_centered"
+            app:layout_constraintTop_toTopOf="@+id/button_add_to_alignment_auto_centered"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_show_auto_center_help"
+        android:layout_width="68dp"
+        android:layout_height="73dp"
+        android:elevation="30dp"
+        android:rotation="0"
+        android:scaleX="0.6"
+        android:scaleY="0.6"
+        android:translationX="12dp"
+        android:translationY="-9dp"
+        app:backgroundTint="#2337a8"
+        app:icon="@android:drawable/ic_dialog_info"
+        app:iconSize="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/Help.Button"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/frame_auto_center_info"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/back_border"
+        android:elevation="40dp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/text_auto_center_info"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:text="How to complete the camera Calibration :
+            \n\n1. Having a star in view , adjust the Threshold slider so that the star in view is encircled in a red circle .
+            \n2. Optional : Adjust the calibration speed . The default value is the slower speed .
+            \n3. Press START CALIBRATION . The dec motor will start moving at the calibration speed .
+            \nAfter the calibration has started , notice the changes in 'Rotation' value on the top side of the screen .
+            \n4. When the 'Rotation' is stabilized to a number with little variation in its changes , press STOP CALIBRATION . The camera is now calibrated.
+            \n\n\nHow to Auto-center a star :
+            \n\nAfter a successful calibration , off-center distance in degrees can be calculated and a star can be auto centered .
+            \npress the AUTO CENTER button . The star will move to the center and when it is centered , tracking will automatically start .
+            \n\nTips :
+            \n\n1. On lower magnifications , calibration speed may have to be increased to get a stable rotation detection .
+            \n2. If after a camera calibration is done and the auto-centering fails , check the ' Invert RA correction ' and/or the ' Invert DEC correction ' checkboxes .
+            \n3. Re-calibration can be performed at any time , if needed.
+            \n4. The 'Rotation' value detected in the Auto Centering Screen , can be used to adjust the rotation of the crosshair in the Camera Utility Screen .
+            \n\n\n\n\n\n\n
+            "
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/frame_auto_center_info" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_close_auto_center_help"
+            android:layout_width="68dp"
+            android:layout_height="73dp"
+            android:rotation="0"
+            android:scaleX="0.6"
+            android:scaleY="0.6"
+            android:translationX="12dp"
+            android:translationY="-9dp"
+            app:backgroundTint="#2337a8"
+            app:icon="@android:drawable/ic_menu_close_clear_cancel"
+            app:iconTintMode="multiply"
+            app:iconSize="45dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/Help.Button" />
+
+        <Button
+            android:id="@+id/button_hide_auto_center_help"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            android:text="Close"
+            app:backgroundTint="#2337a8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_auto_center_info" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+

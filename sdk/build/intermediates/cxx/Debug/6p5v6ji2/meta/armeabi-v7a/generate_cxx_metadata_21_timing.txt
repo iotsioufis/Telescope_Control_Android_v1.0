@@ -1,0 +1,201 @@
+# C/C++ build system timings
+generate_cxx_metadata
+  write-metadata-json-to-file 16ms
+generate_cxx_metadata completed in 16ms
+
+# C/C++ build system timings
+generate_cxx_metadata
+  generate-extra-metadata-files 15ms
+generate_cxx_metadata completed in 15ms
+
+# C/C++ build system timings
+
+# C/C++ build system timings
+
+# C/C++ build system timings
+generate_cxx_metadata 12ms
+
+# C/C++ build system timings
+generate_cxx_metadata
+  write-metadata-json-to-file 20ms
+generate_cxx_metadata completed in 22ms
+
+# C/C++ build system timings
+
+# C/C++ build system timings
+
+# C/C++ build system timings
+generate_cxx_metadata 13ms
+
+# C/C++ build system timings
+generate_cxx_metadata 15ms
+
+# C/C++ build system timings
+
+# C/C++ build system timings
+
+# C/C++ build system timings
+generate_cxx_metadata 10ms
+
+# C/C++ build system timings
+
+# C/C++ build system timings
+generate_cxx_metadata
+  [gap of 16ms]
+  write-metadata-json-to-file 18ms
+  [gap of 13ms]
+generate_cxx_metadata completed in 47ms
+
+# C/C++ build system timings
+generate_cxx_metadata 17ms
+
+# C/C++ build system timings
+
+# C/C++ build system timings
+generate_cxx_metadata 17ms
+
+# C/C++ build system timings
+
+# C/C++ build system timings
+
+# C/C++ build system timings
+generate_cxx_metadata
+  write-metadata-json-to-file 15ms
+generate_cxx_metadata completed in 15ms
+
+# C/C++ build system timings
+generate_cxx_metadata 16ms
+
+# C/C++ build system timings
+
+# C/C++ build system timings
+
+# C/C++ build system timings
+generate_cxx_metadata
+  generate-extra-metadata-files 10ms
+  [gap of 12ms]
+generate_cxx_metadata completed in 26ms
+
+# C/C++ build system timings
+generate_cxx_metadata 16ms
+
+# C/C++ build system timings
+
+# C/C++ build system timings
+
+# C/C++ build system timings
+
+# C/C++ build system timings
+
+# C/C++ build system timings
+
+# C/C++ build system timings
+generate_cxx_metadata
+  generate-extra-metadata-files 31ms
+  [gap of 19ms]
+  write-metadata-json-to-file 22ms
+generate_cxx_metadata completed in 76ms
+
+# C/C++ build system timings
+
+# C/C++ build system timings
+generate_cxx_metadata
+  [gap of 31ms]
+  write-metadata-json-to-file 78ms
+  [gap of 16ms]
+generate_cxx_metadata completed in 125ms
+
+# C/C++ build system timings
+
+# C/C++ build system timings
+generate_cxx_metadata
+  write-metadata-json-to-file 13ms
+generate_cxx_metadata completed in 24ms
+
+# C/C++ build system timings
+generate_cxx_metadata 10ms
+
+# C/C++ build system timings
+
+# C/C++ build system timings
+generate_cxx_metadata 10ms
+
+# C/C++ build system timings
+
+# C/C++ build system timings
+
+# C/C++ build system timings
+generate_cxx_metadata 11ms
+
+# C/C++ build system timings
+
+# C/C++ build system timings
+
+# C/C++ build system timings
+
+# C/C++ build system timings
+
+# C/C++ build system timings
+generate_cxx_metadata 10ms
+
+# C/C++ build system timings
+
+# C/C++ build system timings
+
+# C/C++ build system timings
+
+# C/C++ build system timings
+generate_cxx_metadata
+  write-metadata-json-to-file 16ms
+generate_cxx_metadata completed in 16ms
+
+# C/C++ build system timings
+
+# C/C++ build system timings
+generate_cxx_metadata
+  generate-extra-metadata-files 20ms
+  [gap of 10ms]
+generate_cxx_metadata completed in 30ms
+
+# C/C++ build system timings
+generate_cxx_metadata 10ms
+
+# C/C++ build system timings
+
+# C/C++ build system timings
+
+# C/C++ build system timings
+
+# C/C++ build system timings
+generate_cxx_metadata 12ms
+
+# C/C++ build system timings
+generate_cxx_metadata
+  create-invalidation-state 15ms
+generate_cxx_metadata completed in 15ms
+
+# C/C++ build system timings
+
+# C/C++ build system timings
+generate_cxx_metadata 12ms
+
+# C/C++ build system timings
+generate_cxx_metadata 10ms
+
+# C/C++ build system timings
+
+# C/C++ build system timings
+generate_cxx_metadata 11ms
+
+# C/C++ build system timings
+generate_cxx_metadata
+  write-metadata-json-to-file 15ms
+generate_cxx_metadata completed in 15ms
+
+# C/C++ build system timings
+
+# C/C++ build system timings
+
+# C/C++ build system timings
+generate_cxx_metadata 11ms
+

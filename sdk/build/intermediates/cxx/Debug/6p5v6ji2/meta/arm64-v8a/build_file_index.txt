@@ -1,0 +1,1 @@
+C:\Users\john\AndroidStudioProjects\telescope_control-local-copy\sdk\libcxx_helper\CMakeLists.txt

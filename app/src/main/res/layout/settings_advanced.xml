@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/text_advanced_settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16sp"
+        android:text="Advanced Settings"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="@color/colorOff"
+        android:textSize="22dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_auto_tracking"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:gravity="center_horizontal"
+        android:text="Auto Tracking :"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="@color/colorOff"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_advanced_settings" />
+
+    <RadioGroup
+        android:theme="@style/RadioButtonStyle"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:id="@+id/radio_group_auto_tracking"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_auto_tracking">
+
+        <RadioButton
+            android:id="@+id/radio_auto_tracking_on"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="40dp"
+            android:text="ON"
+            android:padding="10dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:id="@+id/radio_auto_tracking_off"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:padding="10dp"
+            android:text="OFF"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textSize="16sp" />
+
+    </RadioGroup>
+
+    <TextView
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="@color/colorOff"
+        android:id="@+id/text_info_auto_tracking"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Auto Tracking ON:
+\n\nAfter a goto move is completed , tracking is started automatically .
+\nTracking can be disabled by the 'TRACKING IS ENABLED/DISABLED' button on the Homescreen , by the 'STOP' button or the 'UP' and 'DOWN' button of the manual controls .
+\nIf the tracking is disabled after a goto move , it has to be re-enabled manually .
+\n\nAuto Tracking OFF:
+\n\nTracking is enabled manually by the 'TRACKING IS ENABLED/DISABLED' button on the Homescreen .
+\n \nIn both cases , in order to avoid any equipment damage , tracking will be auto-disabled when a tracked object reaches the Zenith or the Horizon ."
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radio_group_auto_tracking"/>
+
+
+    <TextView
+        android:id="@+id/text_sky_model"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:gravity="center_horizontal"
+        android:text="Sky model :"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="@color/colorOff"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_info_auto_tracking" />
+
+    <RadioGroup
+        android:theme="@style/RadioButtonStyle"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:id="@+id/radio_group_sky_model"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_sky_model">
+
+         <RadioButton
+            android:id="@+id/radio_initial_alignment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="40dp"
+            android:text="Initial Star\nAlignment"
+            android:padding="10dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:id="@+id/radio_extra_alignment_stars"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:padding="10dp"
+            android:text="Extra Alignment\nStars"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textSize="16sp" />
+
+    </RadioGroup>
+
+    <TextView
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="@color/colorOff"
+        android:id="@+id/text_info_sky_model"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Initial Star Alignment :
+\n\nUse only the initial 2 , 3 , 4 or 6 Star Alignment .
+\nExtra alignment points can still be added , but will be ignored unless 'Extra Alignment Stars' is selected.
+\n\nExtra Alignment Stars :
+\n\nUse the extra alignment points that are added to the sky model .
+\nWhen there are no extra alignment points added , the initial alignment stars will be used by default ."
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radio_group_sky_model"/>
+
+
+
+    <TextView
+        android:id="@+id/text_accuracy_during_alignment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:gravity="center_horizontal"
+        android:text="Accuracy during Star Alignment :"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="@color/colorOff"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintTop_toBottomOf="@+id/text_info_sky_model" />
+
+    <RadioGroup
+        android:theme="@style/RadioButtonStyle"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:id="@+id/radio_group_accuracy_during_alignment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_accuracy_during_alignment">
+
+        <RadioButton
+            android:id="@+id/radio_do_not_increase_accuracy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="60dp"
+            android:text="Normal"
+            android:checked="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:id="@+id/radio_increase_accuracy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+
+            android:text="Improved"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textSize="16sp" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/text_accuracy_during_alignment_info"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="@color/colorOff"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Normal :
+\n\nInitial offsets of the RA and the DEC axis will be ignored .
+\nThese offsets are due to the manual positioning of the telescope at the home position by the user .
+\n\nImproved :
+\n\nThe initial RA and DEC axis offsets will be used .
+\nThese offsets are different for each side of the meridian .
+\nThe first alignment star of each side of the meridian will be used to provide the offsets to the next alignment stars , that are located in the same side .
+"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radio_group_accuracy_during_alignment" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

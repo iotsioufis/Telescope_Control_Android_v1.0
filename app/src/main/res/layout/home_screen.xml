@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:textSize="22sp"
+        android:textColor="@color/colorHighlighted"
+        android:gravity="center_horizontal"
+        android:id="@+id/text_welcome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="8dp"
+        android:text="Telescope Control \n"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"/>
+
+    <TextView
+        android:textSize="18sp"
+        android:textColor="@color/colorHighlighted"
+        android:gravity="center_horizontal"
+        android:id="@+id/text_welcome2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:text="Wireless Control For Equatorial Mounts"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_welcome"/>
+
+    <TextView
+        android:textSize="18sp"
+        android:textColor="@color/colorHighlighted"
+        android:id="@+id/text_selected"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="8dp"
+        android:text="Selected Object : "
+        android:layout_marginEnd="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textSize="24sp"
+        android:textColor="@color/colorHighlighted"
+        android:id="@+id/text_name"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:text="none"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_selected"
+        app:layout_constraintVertical_bias="0.046"/>
+
+    <TextView
+        android:textSize="18sp"
+        android:textColor="@color/colorHighlighted"
+        android:id="@+id/text_MAG"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="8dp"
+        android:text="Magnitude : "
+        android:layout_marginEnd="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_name"/>
+
+    <TextView
+        android:textSize="18sp"
+        android:textColor="@color/colorHighlighted"
+        android:id="@+id/text_constellation"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="8dp"
+        android:text="Constellation : "
+        android:layout_marginEnd="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_MAG"/>
+
+    <TextView
+        android:textSize="18sp"
+        android:textColor="@color/colorHighlighted"
+        android:id="@+id/text_constellation_name"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:text=" "
+        android:layout_marginEnd="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_constellation"/>
+
+    <TextView
+        android:textSize="18sp"
+        android:textColor="@color/colorHighlighted"
+        android:id="@+id/text_coordinates"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="8dp"
+        android:text="Current Coordinates : "
+        android:layout_marginEnd="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_constellation_name"/>
+
+    <TextView
+        android:textSize="18sp"
+        android:textColor="@color/colorHighlighted"
+        android:id="@+id/text_RA"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:text="RA : "
+        android:layout_marginEnd="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_coordinates"
+        app:layout_constraintVertical_bias="0.121"/>
+
+    <TextView
+        android:textSize="18sp"
+        android:textColor="@color/colorHighlighted"
+        android:id="@+id/text_DEC"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:text="DEC : "
+        android:layout_marginEnd="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_RA"
+        app:layout_constraintVertical_bias="0.171"/>
+
+    <TextView
+        android:textSize="18sp"
+        android:textColor="@color/colorHighlighted"
+        android:id="@+id/text_HA"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:text="HA : "
+        android:layout_marginEnd="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_DEC"
+        app:layout_constraintVertical_bias="0.171"/>
+
+    <TextView
+        android:textSize="18sp"
+        android:textColor="@color/colorHighlighted"
+        android:id="@+id/text_moving_status"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginEnd="8dp"
+        android:autoSizeTextType="uniform"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/progressBar"
+        app:layout_constraintTop_toBottomOf="@+id/text_HA"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_GOTO"
+        android:visibility="gone"
+        android:layout_width="0dp"
+        android:layout_height="69dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="60dp"
+        android:text="GO TO Selected Object"
+        android:textScaleX="0.7"
+        android:scaleX="1"
+        android:scaleY="0.9"
+        android:layout_marginStart="16dp"
+        android:elevation="20dp"
+        app:backgroundTint="#2337a8"
+        app:icon="@drawable/ic_gears"
+        app:iconSize="33dp"
+        app:layout_constraintEnd_toStartOf="@+id/button_tracking"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_HA"
+        app:shapeAppearanceOverlay="@style/General.Button" style="@style/Widget.MaterialComponents.Button.Icon"/>
+
+    <TextView
+        android:textSize="18sp"
+        android:textColor="#870a0a"
+        android:gravity="center_horizontal"
+        android:id="@+id/text_object_invisible"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="8dp"
+        android:text="The selected object is currently\n bellow the Horizon."
+        android:layout_marginEnd="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_GOTO"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_HA"
+        style="?android:attr/progressBarStyle"/>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="265dp"
+        android:layout_marginTop="12dp"
+        android:src="@drawable/skymap_stereographic13"
+        android:elevation="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_selected"
+        app:layout_constraintVertical_bias="0.008"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_tracking"
+        android:visibility="gone"
+        android:layout_width="0dp"
+        android:layout_height="69dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginRight="16dp"
+        android:text="Tracking is Disabled"
+        android:textScaleX="0.7"
+        android:scaleX="1"
+        android:scaleY="0.9"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="16dp"
+        android:elevation="20dp"
+        app:backgroundTint="#2337a8"
+        app:icon="@drawable/framed_icon"
+        app:iconSize="33dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button_GOTO"
+        app:layout_constraintTop_toBottomOf="@+id/text_HA"
+        app:shapeAppearanceOverlay="@style/General.Button"
+        style="@style/Widget.MaterialComponents.Button.Icon"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:textSize="13sp"
+        android:id="@+id/button_improve_accuracy"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="62dp"
+        android:layout_marginTop="70dp"
+        android:text="Improve\nPointing Accuracy"
+        android:textScaleX="0.75"
+        android:scaleX="1"
+        android:scaleY="1"
+        android:elevation="20dp"
+        app:backgroundTint="#2337a8"
+        app:icon="@drawable/ic_accuracy"
+        app:iconSize="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_GOTO"
+        app:shapeAppearanceOverlay="@style/General.Button"
+        style="@style/Widget.MaterialComponents.Button.Icon"/>
+
+    <ImageView
+        android:id="@+id/imageView_small"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:layout_marginTop="560dp"
+        android:src="@drawable/skymap_stereographic13"
+        android:elevation="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/text_selected"/>
+
+    <TextView
+        android:id="@+id/text_developed_by"
+        android:textSize="11sp"
+        android:textStyle="italic"
+        android:textColor="@color/colorHighlighted"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="240dp"
+        android:text=" Developed by :\nTsioufis Ioannis\n\n"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_welcome2"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

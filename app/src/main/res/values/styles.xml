@@ -1,0 +1,60 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <style name="BottomNavigationView" parent="@style/TextAppearance.AppCompat.Caption">
+
+    </style>
+
+    <style name="BottomNavigationTheme" parent="Theme.AppCompat.Light">
+        <item name="colorPrimary">@color/colorHighlighted</item>
+        <item name="android:textColorSecondary">@color/colorPrimaryDark</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+
+
+    </style>
+
+    <style name="RadioButtonStyle" parent="Theme.AppCompat.Light">
+        <item name="colorAccent">@android:color/white</item>
+        <item name="android:textColorSecondary">@color/colorOff</item>
+    </style>
+    <style name="direction.Button" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">3dp</item>
+        <item name="cornerSizeBottomLeft">3dp</item>
+        <item name="cornerSizeTopRight">20dp</item>
+        <item name="cornerSizeBottomRight">20dp</item>
+    </style>
+
+    <style name="Stop.Button" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">30dp</item>
+        <item name="cornerSizeBottomLeft">30dp</item>
+        <item name="cornerSizeTopRight">30dp</item>
+        <item name="cornerSizeBottomRight"> 30dp</item>
+    </style>
+
+    <style name="General.Button" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">10dp</item>
+        <item name="cornerSizeBottomLeft">10dp</item>
+        <item name="cornerSizeTopRight">10dp</item>
+        <item name="cornerSizeBottomRight"> 10dp</item>
+    </style>
+
+    <style name="Help.Button" parent="">
+        <item name="cornerFamily">@null</item>
+        <item name="cornerSizeBottomLeft">30dp</item>
+        <item name="cornerSizeBottomRight">5dp</item>
+        <item name="cornerSizeTopLeft">30dp</item>
+        <item name="cornerSizeTopRight">5dp</item>
+    </style>
+
+</resources>
+
+

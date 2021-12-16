@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" 
+android:layout_width="match_parent" 
+android:layout_height="wrap_content">
+
+    <TextView 
+android:textAppearance="@style/TextAppearance.AppCompat.Body2" 
+android:textSize="18sp" 
+android:gravity="center_horizontal" 
+android:id="@+id/text_improve_pointing_accuracy" 
+android:layout_width="wrap_content" 
+android:layout_height="wrap_content" 
+android:layout_marginTop="15dp" 
+android:text="Improve Pointing accuracy  " 
+app:layout_constraintEnd_toEndOf="parent" 
+app:layout_constraintStart_toStartOf="parent" 
+app:layout_constraintTop_toTopOf="parent"/>
+
+    <com.google.android.material.button.MaterialButton 
+android:id="@+id/button_show_nearest_help" 
+android:layout_width="68dp" 
+android:layout_height="73dp" 
+android:translationX="12dp" 
+android:translationY="-9dp" 
+android:scaleX="0.6" 
+android:scaleY="0.6" 
+android:rotation="0" 
+android:elevation="30dp" 
+app:backgroundTint="#2337a8" 
+app:icon="@android:drawable/ic_dialog_info" 
+app:iconSize="40dp" 
+app:layout_constraintEnd_toEndOf="parent" 
+app:layout_constraintTop_toTopOf="parent" 
+app:shapeAppearanceOverlay="@style/Help.Button"/>
+
+    <RadioGroup 
+android:theme="@style/RadioButtonStyle" 
+android:gravity="center_horizontal" 
+android:orientation="horizontal" 
+android:id="@+id/radio_group_east_west" 
+android:layout_width="270dp" 
+android:layout_height="wrap_content" 
+android:layout_marginTop="20dp" 
+app:layout_constraintEnd_toEndOf="parent" 
+app:layout_constraintStart_toStartOf="parent" 
+app:layout_constraintTop_toBottomOf="@+id/text_improve_pointing_accuracy"/>
+
+    <ProgressBar 
+android:id="@+id/progressBar_nearest_star" 
+android:visibility="gone" 
+android:layout_width="wrap_content" 
+android:layout_height="wrap_content" 
+android:layout_marginTop="150dp" 
+app:layout_constraintEnd_toEndOf="parent" 
+app:layout_constraintHorizontal_bias="0.498" 
+app:layout_constraintStart_toStartOf="parent" 
+app:layout_constraintTop_toBottomOf="@+id/text_target_star_info" 
+style="?android:attr/progressBarStyle"/>
+
+    <TextView 
+android:textAppearance="@style/TextAppearance.AppCompat.Body2" 
+android:textSize="14sp" 
+android:id="@+id/text_target_star_info" 
+android:layout_width="wrap_content" 
+android:layout_height="wrap_content" 
+android:layout_marginTop="30dp" 
+android:text="To improve the pointing accuracy near
+\n \nadd as an extra alignment point a star from the list bellow :
+\nFor more details , press the information button on the top-right corner" 
+app:layout_constraintEnd_toEndOf="parent" 
+app:layout_constraintStart_toStartOf="parent" 
+app:layout_constraintTop_toBottomOf="@+id/radio_group_east_west"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout 
+android:id="@+id/frame_select_ok" 
+android:background="@drawable/border" 
+android:layout_width="match_parent" 
+android:layout_height="60dp" 
+android:layout_marginTop="10dp" 
+android:elevation="10dp" 
+app:layout_constraintRight_toRightOf="parent" 
+app:layout_constraintStart_toStartOf="parent" 
+app:layout_constraintTop_toBottomOf="@+id/text_target_star_info">
+
+        <TextView 
+android:textSize="16sp" 
+android:textColor="@color/colorHighlighted" 
+android:id="@+id/text_selected" 
+android:layout_width="wrap_content" 
+android:layout_height="wrap_content" 
+android:layout_marginLeft="10dp" 
+android:layout_marginTop="4dp" 
+android:layout_marginRight="10dp" 
+android:text="Selected : " 
+app:layout_constraintStart_toStartOf="parent" 
+app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView 
+android:textSize="16sp" 
+android:textColor="@color/colorHighlighted" 
+android:id="@+id/text_selected_object" 
+android:layout_width="230dp" 
+android:layout_height="match_parent" 
+android:layout_marginLeft="10dp" 
+android:layout_marginTop="20dp" 
+android:layout_marginRight="10dp" 
+android:text="Andromeda" 
+android:autoSizeTextType="uniform"
+app:layout_constraintStart_toStartOf="parent" 
+app:layout_constraintTop_toTopOf="parent"/>
+
+        <Button 
+android:id="@+id/button_ok" 
+android:layout_width="70dp" 
+android:layout_height="50dp" 
+android:layout_marginTop="3dp" 
+android:layout_marginRight="16dp" 
+android:text="OK" 
+android:layout_marginEnd="16dp" 
+app:backgroundTint="#2337a8" 
+app:layout_constraintEnd_toEndOf="parent" 
+app:layout_constraintTop_toTopOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView 
+android:id="@+id/recyclerview" 
+android:layout_width="match_parent" 
+android:layout_height="500dp" 
+android:layout_marginTop="30dp" 
+app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" 
+app:layout_constraintStart_toStartOf="parent" 
+app:layout_constraintTop_toBottomOf="@+id/frame_select_ok"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout 
+android:id="@+id/frame_nearest_star_info" 
+android:background="@drawable/back_border" 
+android:visibility="gone" 
+android:layout_width="match_parent" 
+android:layout_height="match_parent" 
+android:elevation="29dp" 
+app:layout_constraintStart_toStartOf="parent" 
+app:layout_constraintTop_toTopOf="parent">
+
+        <TextView 
+android:textAppearance="@style/TextAppearance.AppCompat.Body2" 
+android:textSize="14sp" 
+android:id="@+id/text_nearest_star_info" 
+android:layout_width="match_parent" 
+android:layout_height="match_parent" 
+android:layout_marginLeft="10dp" 
+android:layout_marginTop="10dp" 
+android:layout_marginRight="10dp" 
+android:text="How to improve the pointing accuracy near a selected object:
+\n\n1. Select a star from the list . The list contains the nearest stars to the selected object , with a maximum distance of 20 degrees. In addition , the magnitude of all the listed nearby stars is smaller than 4 . A brighter star has a smaller magnitude than a dimmer one.
+\nThe recommended choice is the nearest star with a brightness that allows the observer to locate and identify it in the viewing eyepiece .
+\n\n2. Select OK to redirect to the Home Screen
+\n\n3. In the Home Screen , Select GO TO SELECTED OBJECT . The telescope will begin to move to the object .
+\n\n4. Select Controls to open the Controls Screen.  If the android device is mounted to the eyepiece , select CAMERA UTILITY to open the Camera Utility Screen .
+\n\n5. Use the manual controls to center the star in the eyepiece . If the Camera Utility is used , for maximum accuracy while centering , zoom in the star with the left camera slider .
+\nThe right camera slider controls the rotation of the crosshair . For an easier centering , rotate the crosshair so when the manual controls are pressed , the star moves along the crosshair lines .
+\nWhen manually centering a star , make sure to always end the manual control moves in the same directions that the GOTO move to that star ended .
+\nThese ending directions are indicated with red arrows if the 'Show motors' directions of the last Goto move' checkbox is checked in the Controls Screen .
+\nAlternatively , to avoid manually centering a star , the auto centering tool can be used by pressing AUTO CENTERING in the Camera Utility Screen
+\n\n6. When the star is centered , select STAR CENTERED . A confirmation frame will appear .
+\n\n7. Select ADD , to add the centered star as an extra alignment point , or CANCEL to cancel the addition .
+\n\n\nNote : An overall improved accuracy is possible for all regions of the sky , by repeating the procedure for different objects spreaded across the sky .        "
+android:layout_marginStart="10dp" 
+android:layout_marginEnd="10dp" 
+app:layout_constraintBottom_toBottomOf="parent" 
+app:layout_constraintTop_toTopOf="@+id/frame_nearest_star_info"/>
+
+        <com.google.android.material.button.MaterialButton 
+android:id="@+id/button_close_nearest_star_help" 
+android:layout_width="68dp" 
+android:layout_height="73dp" 
+android:translationX="12dp" 
+android:translationY="-9dp" 
+android:scaleX="0.6" 
+android:scaleY="0.6" 
+android:rotation="0" 
+android:elevation="30dp" 
+app:backgroundTint="#2337a8" 
+app:icon="@android:drawable/ic_menu_close_clear_cancel" 
+app:iconSize="45dp" 
+app:iconTintMode="multiply"
+app:layout_constraintEnd_toEndOf="parent" 
+app:layout_constraintTop_toTopOf="parent" 
+app:shapeAppearanceOverlay="@style/Help.Button"/>
+
+        <Button 
+android:id="@+id/button_hide_nearest_star_help" 
+android:layout_width="wrap_content" 
+android:layout_height="wrap_content" 
+android:layout_marginTop="20dp" 
+android:text="Close" 
+android:scaleX="0.8" 
+android:scaleY="0.8" 
+app:backgroundTint="#2337a8" 
+app:layout_constraintEnd_toEndOf="parent" 
+app:layout_constraintHorizontal_bias="0.5" 
+app:layout_constraintStart_toStartOf="parent" 
+app:layout_constraintTop_toBottomOf="@+id/text_nearest_star_info"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

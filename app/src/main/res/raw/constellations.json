@@ -1,0 +1,448 @@
+{
+  "And": {
+    "name": "Andromeda",
+    "genitive": "Andromedae",
+    "en": "Andromeda (mythological character)"
+  },
+  "Ant": {
+    "name": "Antlia",
+    "genitive": "Antliae",
+    "en": "air pump"
+  },
+  "Aps": {
+    "name": "Apus",
+    "genitive": "Apodis",
+    "en": "Bird-of-paradise"
+  },
+  "Aqr": {
+    "name": "Aquarius",
+    "genitive": "Aquarii",
+    "en": "water-bearer"
+  },
+  "Aql": {
+    "name": "Aquila",
+    "genitive": "Aquilae",
+    "en": "eagle"
+  },
+  "Ara": {
+    "name": "Ara",
+    "genitive": "Arae",
+    "en": "altar"
+  },
+  "Ari": {
+    "name": "Aries",
+    "genitive": "Arietis",
+    "en": "ram"
+  },
+  "Aur": {
+    "name": "Auriga",
+    "genitive": "Aurigae",
+    "en": "charioteer"
+  },
+  "Boo": {
+    "name": "Boötis",
+    "genitive": "Boötis",
+    "en": "herdsman"
+  },
+  "Cae": {
+    "name": "Caelum",
+    "genitive": "Caeli",
+    "en": "chisel or graving tool"
+  },
+  "Cam": {
+    "name": "Camelopardalis",
+    "genitive": "Camelopardalis",
+    "en": "giraffe"
+  },
+  "Cnc": {
+    "name": "Cancer",
+    "genitive": "Cancri",
+    "en": "crab"
+  },
+  "CVn": {
+    "name": "Canes Venatici",
+    "genitive": "Canum Venaticorum",
+    "en": "hunting dogs"
+  },
+  "CMa": {
+    "name": "Canis Major",
+    "genitive": "Canis Majoris",
+    "en": "greater dog"
+  },
+  "CMi": {
+    "name": "Canis Minor",
+    "genitive": "Canis Minoris",
+    "en": "lesser dog"
+  },
+  "Cap": {
+    "name": "Capricornus",
+    "genitive": "Capricorni",
+    "en": "sea goat"
+  },
+  "Car": {
+    "name": "Carina",
+    "genitive": "Carinae",
+    "en": "keel"
+  },
+  "Cas": {
+    "name": "Cassiopeia",
+    "genitive": "Cassiopeiae",
+    "en": "Cassiopeia (mythological character)"
+  },
+  "Cen": {
+    "name": "Centaurus",
+    "genitive": "Centauri",
+    "en": "centaur"
+  },
+  "Cep": {
+    "name": "Cepheus",
+    "genitive": "Cephei",
+    "en": "Cepheus (mythological character)"
+  },
+  "Cet": {
+    "name": "Cetus",
+    "genitive": "Ceti",
+    "en": "sea monster (whale)"
+  },
+  "Cha": {
+    "name": "Chamaeleon",
+    "genitive": "Chamaeleontis",
+    "en": "chameleon"
+  },
+  "Cir": {
+    "name": "Circinus",
+    "genitive": "Circini",
+    "en": "compasses"
+  },
+  "Col": {
+    "name": "Columba",
+    "genitive": "Columbae",
+    "en": "dove"
+  },
+  "Com": {
+    "name": "Coma Berenices",
+    "genitive": "Comae Berenices",
+    "en": "Berenice's hair"
+  },
+  "CrA": {
+    "name": "Corona Australis",
+    "genitive": "Coronae Australis",
+    "en": "southern crown"
+  },
+  "CrB": {
+    "name": "Corona Borealis",
+    "genitive": "Coronae Borealis",
+    "en": "northern crown"
+  },
+  "Crv": {
+    "name": "Corvus",
+    "genitive": "Corvi",
+    "en": "crow"
+  },
+  "Crt": {
+    "name": "Crater",
+    "genitive": "Crateris",
+    "en": "cup"
+  },
+  "Cru": {
+    "name": "Crux",
+    "genitive": "Crucis",
+    "en": "southern cross"
+  },
+  "Cyg": {
+    "name": "Cygnus",
+    "genitive": "Cygni",
+    "en": "swan or Northern Cross"
+  },
+  "Del": {
+    "name": "Delphinus",
+    "genitive": "Delphini",
+    "en": "dolphin"
+  },
+  "Dor": {
+    "name": "Dorado",
+    "genitive": "Doradus",
+    "en": "dolphinfish"
+  },
+  "Dra": {
+    "name": "Draco",
+    "genitive": "Draconis",
+    "en": "dragon"
+  },
+  "Equ": {
+    "name": "Equuleus",
+    "genitive": "Equulei",
+    "en": "pony"
+  },
+  "Eri": {
+    "name": "Eridanus",
+    "genitive": "Eridani",
+    "en": "river Eridanus (mythology)"
+  },
+  "For": {
+    "name": "Fornax",
+    "genitive": "Fornacis",
+    "en": "chemical furnace"
+  },
+  "Gem": {
+    "name": "Gemini",
+    "genitive": "Geminorum",
+    "en": "twins"
+  },
+  "Gru": {
+    "name": "Grus",
+    "genitive": "Gruis",
+    "en": "Crane"
+  },
+  "Her": {
+    "name": "Hercules",
+    "genitive": "Herculis",
+    "en": "Hercules (mythological character)"
+  },
+  "Hor": {
+    "name": "Horologium",
+    "genitive": "Horologii",
+    "en": "pendulum clock"
+  },
+  "Hya": {
+    "name": "Hydra",
+    "genitive": "Hydrae",
+    "en": "Hydra (mythological creature)"
+  },
+  "Hyi": {
+    "name": "Hydrus",
+    "genitive": "Hydri",
+    "en": "lesser water snake"
+  },
+  "Ind": {
+    "name": "Indus",
+    "genitive": "Indi",
+    "en": "Indian"
+  },
+  "Lac": {
+    "name": "Lacerta",
+    "genitive": "Lacertae",
+    "en": "lizard"
+  },
+  "Leo": {
+    "name": "Leo",
+    "genitive": "Leonis",
+    "en": "lion"
+  },
+  "LMi": {
+    "name": "Leo Minor",
+    "genitive": "Leonis Minoris",
+    "en": "lesser lion"
+  },
+  "Lep": {
+    "name": "Lepus",
+    "genitive": "Leporis",
+    "en": "hare"
+  },
+  "Lib": {
+    "name": "Libra",
+    "genitive": "Librae",
+    "en": "balance"
+  },
+  "Lup": {
+    "name": "Lupus",
+    "genitive": "Lupi",
+    "en": "wolf"
+  },
+  "Lyn": {
+    "name": "Lynx",
+    "genitive": "Lyncis",
+    "en": "lynx"
+  },
+  "Lyr": {
+    "name": "Lyra",
+    "genitive": "Lyrae",
+    "en": "lyre / harp"
+  },
+  "Men": {
+    "name": "Mensa",
+    "genitive": "Mensae",
+    "en": "Table Mountain (South Africa)"
+  },
+  "Mic": {
+    "name": "Microscopium",
+    "genitive": "Microscopii",
+    "en": "microscope"
+  },
+  "Mon": {
+    "name": "Monoceros",
+    "genitive": "Monocerotis",
+    "en": "unicorn"
+  },
+  "Mus": {
+    "name": "Musca",
+    "genitive": "Muscae",
+    "en": "fly"
+  },
+  "Nor": {
+    "name": "Norma",
+    "genitive": "Normae",
+    "en": "carpenter's level"
+  },
+  "Oct": {
+    "name": "Octans",
+    "genitive": "Octantis",
+    "en": "octant (instrument)"
+  },
+  "Oph": {
+    "name": "Ophiuchus",
+    "genitive": "Ophiuchi",
+    "en": "serpent-bearer"
+  },
+  "Ori": {
+    "name": "Orion",
+    "genitive": "Orionis",
+    "en": "Orion (mythological character)"
+  },
+  "Pav": {
+    "name": "Pavo",
+    "genitive": "Pavonis",
+    "en": "peacock"
+  },
+  "Peg": {
+    "name": "Pegasus",
+    "genitive": "Pegasi",
+    "en": "Pegasus (mythological creature)"
+  },
+  "Per": {
+    "name": "Perseus",
+    "genitive": "Persei",
+    "en": "Perseus (mythological character)"
+  },
+  "Phe": {
+    "name": "Phoenix",
+    "genitive": "Phoenicis",
+    "en": "phoenix"
+  },
+  "Pic": {
+    "name": "Pictor",
+    "genitive": "Pictoris",
+    "en": "easel"
+  },
+  "Psc": {
+    "name": "Pisces",
+    "genitive": "Piscium",
+    "en": "fishes"
+  },
+  "PsA": {
+    "name": "Piscis Austrinus",
+    "genitive": "Piscis Austrini",
+    "en": "southern fish"
+  },
+  "Pup": {
+    "name": "Puppis",
+    "genitive": "Puppis",
+    "en": "poop deck"
+  },
+  "Pyx": {
+    "name": "Pyxis",
+    "genitive": "Pyxidis",
+    "en": "mariner's compass"
+  },
+  "Ret": {
+    "name": "Reticulum",
+    "genitive": "Reticuli",
+    "en": "eyepiece graticule"
+  },
+  "Sge": {
+    "name": "Sagitta",
+    "genitive": "Sagittae",
+    "en": "arrow"
+  },
+  "Sgr": {
+    "name": "Sagittarius",
+    "genitive": "Sagittarii",
+    "en": "archer"
+  },
+  "Sco": {
+    "name": "Scorpius",
+    "genitive": "Scorpii",
+    "en": "scorpion"
+  },
+  "Scl": {
+    "name": "Sculptor",
+    "genitive": "Sculptoris",
+    "en": "sculptor"
+  },
+  "Sct": {
+    "name": "Scutum",
+    "genitive": "Scuti",
+    "en": "shield (of Sobieski)"
+  },
+  "Ser": {
+    "name": "Serpens",
+    "genitive": "Serpentis",
+    "en": "snake"
+  },
+  "Sex": {
+    "name": "Sextans",
+    "genitive": "Sextantis",
+    "en": "sextant"
+  },
+  "Tau": {
+    "name": "Taurus",
+    "genitive": "Tauri",
+    "en": "bull"
+  },
+  "Tel": {
+    "name": "Telescopium",
+    "genitive": "Telescopii",
+    "en": "telescope"
+  },
+  "Tri": {
+    "name": "Triangulum",
+    "genitive": "Trianguli",
+    "en": "triangle"
+  },
+  "TrA": {
+    "name": "Triangulum Australe",
+    "genitive": "Trianguli Australis",
+    "en": "southern triangle"
+  },
+  "Tuc": {
+    "name": "Tucana",
+    "genitive": "Tucanae",
+    "en": "toucan"
+  },
+  "UMa": {
+    "name": "Ursa Major",
+    "genitive": "Ursae Majoris",
+    "en": "great bear"
+  },
+  "UMi": {
+    "name": "Ursa Minor",
+    "genitive": "Ursae Minoris",
+    "en": "lesser bear"
+  },
+  "Vel": {
+    "name": "Vela",
+    "genitive": "Velorum",
+    "en": "sails"
+  },
+  "Vir": {
+    "name": "Virgo",
+    "genitive": "Virginis",
+    "en": "virgin or maiden"
+  },
+  "Vol": {
+    "name": "Volans",
+    "genitive": "Volantis",
+    "en": "flying fish"
+  },
+  "Vul": {
+    "name": "Vulpecula",
+    "genitive": "Vulpeculae",
+    "en": "fox"
+  },
+
+  "unavailable": {
+    "name": "unavailable",
+    "genitive": "unavailable",
+    "en": "unavailable"
+  }
+}

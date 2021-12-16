@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textSize="22dp"
+        android:textColor="@color/colorOff"
+        android:id="@+id/text_bluetooth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Bluetooth Connection "
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <TextView
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textSize="20dp"
+        android:textColor="@color/colorOff"
+        android:id="@+id/text_bluetooth_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="Paired Bluetooth Devices : "
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/recyclerViewDevice"/>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_open_bluetooth_settings"
+        android:layout_width="125dp"
+        android:layout_height="60dp"
+        android:text="pair new device"
+        android:scaleX="0.7"
+        android:scaleY="0.7"
+        android:rotation="0"
+        android:elevation="40dp"
+        app:backgroundTint="#2337a8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button_reload_bluetooth_list"
+        app:layout_constraintTop_toTopOf="@+id/button_reload_bluetooth_list"
+        app:shapeAppearanceOverlay="@style/General.Button"
+        style="@style/Widget.MaterialComponents.Button.Icon"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_reload_bluetooth_list"
+        android:layout_width="125dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="110dp"
+        android:text="Reload list"
+        android:scaleX="0.7"
+        android:scaleY="0.7"
+        android:rotation="0"
+        android:elevation="40dp"
+        app:backgroundTint="#2337a8"
+        app:layout_constraintEnd_toStartOf="@+id/button_open_bluetooth_settings"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/text_bluetooth"
+        app:shapeAppearanceOverlay="@style/General.Button"
+        style="@style/Widget.MaterialComponents.Button.Icon"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewDevice"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="90dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_open_bluetooth_settings"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_show_bluetooth_help"
+        android:layout_width="68dp"
+        android:layout_height="73dp"
+        android:elevation="30dp"
+        android:rotation="0"
+        android:scaleX="0.6"
+        android:scaleY="0.6"
+        android:translationX="12dp"
+        android:translationY="-9dp"
+        app:backgroundTint="#2337a8"
+        app:icon="@android:drawable/ic_dialog_info"
+        app:iconSize="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/Help.Button"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/frame_bluetooth_info"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/back_border"
+        android:elevation="40dp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/text_bluetooth_info"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:text="Paired Bluetooth devices are listed .
+            \nIf the telescope mount is not listed , select PAIR NEW DEVICE to open the Android Bluetooth Settings , where the telescope mount can be paired with the Android device .
+\nThe mount uses an HC-06 Bluetooth module . The default pin number is 1234 .
+\nAfter the mount is paired to the Android device , select RELOAD LIST to include the new paired mount to the paired devices.
+\nTo connect to the telescope mount , select the mount from the list below .
+\nAfter the first successful connection , open the Mount Configuration Settings and configure the mount . Save the configuration .
+\nThe procedures of the first pairing , first connection and mount configuration , are required to be completed only once .
+\nAfter the Bluetooth connection is configured , just use the connect / disconnect icon on the top right corner to : connect to / disconnect from , the telescope mount .
+\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/frame_bluetooth_info" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_close_bluetooth_help"
+            android:layout_width="68dp"
+            android:layout_height="73dp"
+            android:rotation="0"
+            android:scaleX="0.6"
+            android:scaleY="0.6"
+            android:translationX="12dp"
+            android:translationY="-9dp"
+            app:backgroundTint="#2337a8"
+            app:icon="@android:drawable/ic_menu_close_clear_cancel"
+            app:iconTintMode="multiply"
+            app:iconSize="45dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/Help.Button" />
+
+        <Button
+            android:id="@+id/button_hide_bluetooth_help"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            android:text="Close"
+            app:backgroundTint="#2337a8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_bluetooth_info" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

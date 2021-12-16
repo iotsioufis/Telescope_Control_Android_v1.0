@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textSize="22dp"
+        android:textColor="@color/colorOff"
+        android:id="@+id/text_mount_configuration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Mount Configuration"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_save_config"
+        android:layout_width="wrap_content"
+        android:layout_height="58dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="5dp"
+        android:text="Save \nConfiguration"
+        android:scaleX="0.8"
+        android:scaleY="0.8"
+        android:rotation="0"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:elevation="20dp"
+        app:backgroundTint="#2337a8"
+        app:icon="@drawable/ic_diskette"
+        app:iconTint="#dff8f7f5"
+        app:layout_constraintEnd_toStartOf="@+id/button_reset"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_mount_configuration"
+        app:shapeAppearanceOverlay="@style/General.Button" style="@style/Widget.MaterialComponents.Button.Icon"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_reset"
+        android:layout_width="wrap_content"
+        android:layout_height="58dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="5dp"
+        android:text="    Reset To    \nDefaults"
+        android:scaleX="0.75"
+        android:scaleY="0.8"
+        android:rotation="0"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="5dp"
+        android:elevation="20dp"
+        app:backgroundTint="#2337a8"
+        app:icon="@drawable/ic_refresh"
+        app:iconTint="#dff8f7f5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button_save_config"
+        app:layout_constraintTop_toBottomOf="@+id/text_mount_configuration"
+        app:shapeAppearanceOverlay="@style/General.Button" style="@style/Widget.MaterialComponents.Button.Icon"/>
+
+    <TextView
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="@color/colorOff"
+        android:id="@+id/text_stepper_chips"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="30dp"
+        android:text="Note for quick setting of the correct motor directions :\nPress(multiple times to increase the speed) the RIGHT button , that moves the DEC motor , or the UP button , that moves the RA motor .
+\nIn both cases , the telescope should move towards the East , if it is initially pointed to the North .\n\n\n\n"
+        android:layout_marginStart="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_dec_motor_speed"/>
+
+    <CheckBox
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColorHighlight="@color/colorHighlighted"
+        android:textColorLink="@color/colorHighlighted"
+        android:id="@+id/checkBox_invert_ra"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Invert RA \nmotor direction "
+        android:scaleX="1.1"
+        android:scaleY="1.1"
+        android:buttonTint="@color/colorHighlighted"
+        app:layout_constraintEnd_toStartOf="@+id/checkBox_invert_dec"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_save_config"/>
+
+    <CheckBox
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColorHighlight="@color/colorHighlighted"
+        android:textColorLink="@color/colorHighlighted"
+        android:id="@+id/checkBox_invert_dec"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Invert DEC \nmotor direction "
+        android:scaleX="1.1"
+        android:scaleY="1.1"
+        android:buttonTint="@color/colorHighlighted"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/checkBox_invert_ra"
+        app:layout_constraintTop_toTopOf="@+id/checkBox_invert_ra"/>
+
+    <TextView
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="@color/colorOff"
+        android:id="@+id/text_ra_motor_steps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="40dp"
+        android:text="RA motor steps for a full rotation :"
+        android:layout_marginStart="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox_invert_ra"/>
+
+    <EditText
+        android:id="@+id/editText_ra_motor_steps"
+        android:background="@drawable/back_border"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:hint="200"
+        android:ems="5"
+        android:maxLength="5"
+        android:inputType="number"
+        android:layout_marginStart="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_ra_motor_steps"/>
+
+    <TextView
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="@color/colorOff"
+        android:id="@+id/text_dec_motor_steps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:text="DEC motor steps for a full rotation :"
+        android:layout_marginStart="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_ra_motor_steps"/>
+
+    <EditText
+        android:id="@+id/editText_dec_motor_steps"
+        android:background="@drawable/back_border"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:hint="200"
+        android:ems="5"
+        android:maxLength="5"
+        android:inputType="number"
+        android:layout_marginStart="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_dec_motor_steps"/>
+
+    <TextView
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="@color/colorOff"
+        android:id="@+id/text_ra_gear_teeth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="15dp"
+        android:text="Number of teeth of the mount's RA gear : "
+        android:layout_marginStart="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_dec_motor_steps"/>
+
+    <EditText
+        android:id="@+id/editText_ra_gear_teeth"
+        android:background="@drawable/back_border"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:hint="130"
+        android:ems="5"
+        android:maxLength="5"
+        android:inputType="number"
+        android:layout_marginStart="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_ra_gear_teeth"/>
+
+    <TextView
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="@color/colorOff"
+        android:id="@+id/text_dec_gear_teeth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="15dp"
+        android:text="Number of teeth of the mount's DEC gear : "
+        android:layout_marginStart="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_ra_gear_teeth"/>
+
+    <EditText
+        android:id="@+id/editText_dec_gear_teeth"
+        android:background="@drawable/back_border"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:hint="65"
+        android:ems="5"
+        android:maxLength="5"
+        android:inputType="number"
+        android:layout_marginStart="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_dec_gear_teeth"/>
+
+    <TextView
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="@color/colorOff"
+        android:id="@+id/text_ra_mount_pulley"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="15dp"
+        android:text="Number of teeth of the pulley or gear \nadjusted on the RA axis of the mount : "
+        android:layout_marginStart="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_dec_gear_teeth"/>
+
+    <EditText
+        android:id="@+id/editText_ra_mount_pulley"
+        android:background="@drawable/back_border"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="5dp"
+        android:hint="40"
+        android:ems="5"
+        android:maxLength="5"
+        android:inputType="number"
+        android:layout_marginStart="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_ra_mount_pulley"/>
+
+    <TextView
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="@color/colorOff"
+        android:id="@+id/text_ra_motor_pulley"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="15dp"
+        android:text="Number of teeth of the pulley or gear \nadjusted on the RA motor's shaft :"
+        android:layout_marginStart="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_ra_mount_pulley"/>
+
+    <EditText
+        android:id="@+id/editText_ra_motor_pulley"
+        android:background="@drawable/back_border"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="5dp"
+        android:hint="16"
+        android:ems="5"
+        android:maxLength="5"
+        android:inputType="number"
+        android:layout_marginStart="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_ra_motor_pulley"/>
+
+    <TextView
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="@color/colorOff"
+        android:id="@+id/text_dec_mount_pulley"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="15dp"
+        android:text="Number of teeth of the pulley or gear \nadjusted on the DEC axis of the mount : "
+        android:layout_marginStart="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_ra_motor_pulley"/>
+
+    <EditText
+        android:id="@+id/editText_dec_mount_pulley"
+        android:background="@drawable/back_border"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="5dp"
+        android:hint="40"
+        android:ems="5"
+        android:maxLength="5"
+        android:inputType="number"
+        android:layout_marginStart="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_dec_mount_pulley"/>
+
+    <TextView
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="@color/colorOff"
+        android:id="@+id/text_dec_motor_pulley"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="15dp"
+        android:text="Number of teeth of the pulley or gear \nadjusted on the DEC motor's shaft :"
+        android:layout_marginStart="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_dec_mount_pulley"/>
+
+    <EditText
+        android:id="@+id/editText_dec_motor_pulley"
+        android:background="@drawable/back_border"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="5dp"
+        android:hint="16 "
+        android:ems="5"
+        android:maxLength="5"
+        android:inputType="number"
+        android:layout_marginStart="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_dec_motor_pulley"/>
+
+    <TextView
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="@color/colorOff"
+        android:id="@+id/text_ra_speed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="15dp"
+        android:text="RA motor speed : (500 to 4000) :"
+        android:layout_marginStart="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_dec_motor_pulley"/>
+
+    <EditText
+        android:id="@+id/editText_ra_motor_speed"
+        android:background="@drawable/back_border"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="5dp"
+        android:hint="3500"
+        android:ems="5"
+        android:maxLength="5"
+        android:inputType="number"
+        android:layout_marginStart="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_ra_speed"/>
+
+    <TextView
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="@color/colorOff"
+        android:id="@+id/text_dec_speed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="15dp"
+        android:text="DEC motor speed : (500 to 4000) :"
+        android:layout_marginStart="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_ra_motor_speed"/>
+
+    <EditText
+        android:id="@+id/editText_dec_motor_speed"
+        android:background="@drawable/back_border"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="5dp"
+        android:hint="2500"
+        android:ems="5"
+        android:maxLength="5"
+        android:inputType="number"
+        android:layout_marginStart="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_dec_speed"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

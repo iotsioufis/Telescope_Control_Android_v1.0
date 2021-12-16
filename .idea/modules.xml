@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/telescopecontrol.iml" filepath="$PROJECT_DIR$/.idea/modules/telescopecontrol.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Jama-1.0.3/telescopecontrol.Jama-1.0.3.iml" filepath="$PROJECT_DIR$/.idea/modules/Jama-1.0.3/telescopecontrol.Jama-1.0.3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/telescopecontrol.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/telescopecontrol.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sdk/telescopecontrol.sdk.iml" filepath="$PROJECT_DIR$/.idea/modules/sdk/telescopecontrol.sdk.iml" />
+    </modules>
+  </component>
+</project>

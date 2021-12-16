@@ -1,0 +1,2 @@
+ninja: Entering directory `C:\Users\john\AndroidStudioProjects\telescope_control-local-copy\sdk\.cxx\Debug\6p5v6ji2\armeabi-v7a'
+ninja: no work to do.

@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_backlash_fix"
+        android:layout_width="125dp"
+        android:layout_height="58dp"
+        android:text="fix\nbacklash"
+        android:scaleX="0.7"
+        android:scaleY="0.7"
+        android:rotation="0"
+        app:backgroundTint="#2337a8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintStart_toEndOf="@+id/button_camera"
+        app:layout_constraintTop_toTopOf="@+id/button_camera"
+        app:shapeAppearanceOverlay="@style/General.Button"
+        style="@style/Widget.MaterialComponents.Button.Icon"/>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_camera"
+        android:layout_width="125dp"
+        android:layout_height="58dp"
+        android:layout_marginBottom="8dp"
+        android:text="camera utility"
+        android:scaleX="0.7"
+        android:scaleY="0.7"
+        android:rotation="0"
+        app:backgroundTint="#2337a8"
+        app:layout_constraintBottom_toTopOf="@+id/text_ra_speed"
+        app:layout_constraintEnd_toStartOf="@+id/button_for_alignment"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:shapeAppearanceOverlay="@style/General.Button"
+        style="@style/Widget.MaterialComponents.Button.Icon"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_for_alignment"
+        android:layout_width="125dp"
+        android:layout_height="58dp"
+        android:text="star centered"
+        android:scaleX="0.7"
+        android:scaleY="0.7"
+        android:rotation="0"
+        app:backgroundTint="#2337a8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintStart_toEndOf="@+id/button_goto_initial"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/button_goto_initial"
+        app:shapeAppearanceOverlay="@style/General.Button"
+        style="@style/Widget.MaterialComponents.Button.Icon"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_goto_initial"
+        android:layout_width="125dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="20dp"
+        android:text="return to home"
+        android:scaleX="0.7"
+        android:scaleY="0.7"
+        android:rotation="0"
+        app:backgroundTint="#2337a8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button_for_alignment"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/General.Button"
+        style="@style/Widget.MaterialComponents.Button.Icon"/>
+
+    <TextView
+        android:textColor="@color/colorHighlighted"
+        android:id="@+id/text_dec_speed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DEC motor Speed : "
+        app:layout_constraintBottom_toTopOf="@+id/slider_dec"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/slider_ra"
+        app:layout_constraintVertical_bias="0.81"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_up"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="4dp"
+        android:rotation="270"
+        android:scaleY="1.3"
+        app:backgroundTint="#2337a8"
+        app:icon="@android:drawable/ic_media_play"
+        app:layout_constraintBottom_toTopOf="@+id/button_stop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1"
+        app:shapeAppearanceOverlay="@style/direction.Button"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_down"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:scaleY="1.3"
+        android:rotation="90"
+        app:backgroundTint="#2337a8"
+        app:icon="@android:drawable/ic_media_play"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_stop"
+        app:shapeAppearanceOverlay="@style/direction.Button" style="@style/Widget.MaterialComponents.Button.Icon"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_left"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginRight="9dp"
+        android:rotation="180"
+        android:scaleY="1.3"
+        app:backgroundTint="#2337a8"
+        app:icon="@android:drawable/ic_media_play"
+        app:layout_constraintEnd_toStartOf="@+id/button_stop"
+        app:layout_constraintTop_toBottomOf="@+id/button_up"
+        app:shapeAppearanceOverlay="@style/direction.Button"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_right"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="9dp"
+        android:layout_marginTop="19dp"
+        android:scaleY="1.3"
+        app:backgroundTint="#2337a8"
+        app:icon="@android:drawable/ic_media_play"
+        app:layout_constraintStart_toEndOf="@+id/button_stop"
+        app:layout_constraintTop_toBottomOf="@+id/button_up"
+        app:shapeAppearanceOverlay="@style/direction.Button" style="@style/Widget.MaterialComponents.Button.Icon"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:textSize="12sp"
+        android:id="@+id/button_stop"
+        android:paddingLeft="13dp"
+        android:paddingRight="13dp"
+        android:layout_width="64dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="66dp"
+        android:minHeight="0dp"
+        android:text="stop"
+        android:textScaleX="1"
+        android:scaleX="1.1"
+        android:scaleY="1.1"
+        app:backgroundTint="#b61313"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_for_alignment"
+        app:shapeAppearanceOverlay="@style/Stop.Button" style="@style/Widget.MaterialComponents.Button.Icon"/>
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/slider_ra"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="150dp"
+        android:stepSize="1"
+        android:valueFrom="0"
+        android:valueTo="7"
+        app:haloColor="@color/colorHighlighted"
+        app:haloRadius="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_down"
+        app:thumbColor="#2337a8"
+        app:thumbRadius="16dp"
+        app:tickColorInactive="@color/colorHighlighted"
+        app:trackColorActive="#2337a8"
+        app:trackColorInactive="@color/cardview_dark_background"
+        app:trackHeight="20dp"/>
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/slider_dec"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="56dp"
+        android:stepSize="1"
+        android:valueFrom="0"
+        android:valueTo="7"
+        app:haloColor="@color/colorHighlighted"
+        app:haloRadius="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/slider_ra"
+        app:thumbColor="#2337a8"
+        app:thumbRadius="16dp"
+        app:tickColorInactive="@color/colorHighlighted"
+        app:trackColorActive="#2337a8"
+        app:trackColorInactive="@color/cardview_dark_background"
+        app:trackHeight="20dp"/>
+
+    <TextView
+        android:textColor="@color/colorHighlighted"
+        android:id="@+id/text_ra_speed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RA motor Speed : "
+        android:layout_marginTop="60dp"
+        app:layout_constraintBottom_toTopOf="@+id/slider_ra"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_down"
+        app:layout_constraintVertical_bias="0.883"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:orientation="vertical"
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_begin="364dp"/>
+
+    <SurfaceView
+        android:id="@+id/surfaceView_camera"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+
+    <CheckBox
+        android:id="@+id/checkBox_ending_directions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:buttonTint="@color/colorHighlighted"
+        android:textColor="@color/colorHighlighted"
+        android:layout_marginTop="50dp"
+        android:scaleX="1.1"
+        android:scaleY="1.1"
+        android:text="Show motors' directions of the last 'Goto' move .\nDirections will be indicated with red colour."
+        android:textColorHighlight="@color/colorHighlighted"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/slider_dec" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/frame_add_to_alignment_controls"
+        android:background="@drawable/back_border"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginTop="5dp"
+        android:elevation="40dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:textSize="16sp"
+            android:textColor="#676871"
+            android:gravity="center_horizontal"
+            android:id="@+id/text_add_to_alignment_controls"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="10dp"
+            android:text="Star Alignment already done .\n\nAdd this star as an extra alignment point ?   "
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+
+        <Button
+            android:id="@+id/button_add_to_alignment_controls"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:text="add"
+            android:scaleX="0.9"
+            android:scaleY="0.9"
+            app:backgroundTint="#2337a8"
+            app:layout_constraintEnd_toStartOf="@+id/button_cancel_add_to_alignment_controls"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_add_to_alignment_controls"/>
+
+
+
+        <Button
+            android:id="@+id/button_cancel_add_to_alignment_controls"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="CANCEL"
+            android:scaleX="0.9"
+            android:scaleY="0.9"
+            app:backgroundTint="#2337a8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/button_add_to_alignment_controls"
+            app:layout_constraintTop_toTopOf="@+id/button_add_to_alignment_controls"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

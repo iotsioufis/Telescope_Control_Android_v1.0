@@ -1,0 +1,39 @@
+{
+  "stringTable": {},
+  "buildFiles": [
+    "C:\\Users\\john\\AndroidStudioProjects\\telescope_control-local-copy\\sdk\\libcxx_helper\\CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "C:\\Users\\john\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe",
+      "-C",
+      "C:\\Users\\john\\AndroidStudioProjects\\telescope_control-local-copy\\sdk\\.cxx\\RelWithDebInfo\\5n5u1e1f\\x86_64",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "C:\\Users\\john\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe",
+    "-C",
+    "C:\\Users\\john\\AndroidStudioProjects\\telescope_control-local-copy\\sdk\\.cxx\\RelWithDebInfo\\5n5u1e1f\\x86_64",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "opencv_jni_shared-RelWithDebInfo-x86_64": {
+      "buildCommandComponents": [
+        "C:\\Users\\john\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe",
+        "-C",
+        "C:\\Users\\john\\AndroidStudioProjects\\telescope_control-local-copy\\sdk\\.cxx\\RelWithDebInfo\\5n5u1e1f\\x86_64",
+        "opencv_jni_shared"
+      ],
+      "buildType": "release",
+      "abi": "x86_64",
+      "artifactName": "opencv_jni_shared",
+      "output": "C:\\Users\\john\\AndroidStudioProjects\\telescope_control-local-copy\\sdk\\.cxx\\RelWithDebInfo\\5n5u1e1f\\x86_64\\libopencv_jni_shared.a"
+    }
+  },
+  "toolchains": {},
+  "cFileExtensions": [],
+  "cppFileExtensions": [
+    "cpp"
+  ]
+}

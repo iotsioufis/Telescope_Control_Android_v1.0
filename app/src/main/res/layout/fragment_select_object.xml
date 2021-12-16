@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+    <TextView
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textSize="18sp"
+        android:id="@+id/textViewinfo1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Select an object by :"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:theme="@style/RadioButtonStyle"
+        android:orientation="horizontal"
+        android:id="@+id/radio_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewinfo1"
+        >
+        <RadioButton
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:id="@+id/radio1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Name"
+            android:layout_weight="0.9"/>
+
+        <RadioButton
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:id="@+id/radio2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="HIP number"
+            android:layout_weight="1.1"/>
+
+        <RadioButton
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:id="@+id/radio3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="NGC number"
+            android:layout_weight="1.1"/>
+
+
+
+    </RadioGroup>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/frame_select_ok"
+        android:background="@drawable/border"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="5dp"
+        android:elevation="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/search"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radio_group">
+
+
+        <TextView
+            android:textSize="16sp"
+            android:textColor="@color/colorHighlighted"
+            android:id="@+id/text_selected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="10dp"
+            android:text="Selected : "
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:textSize="16sp"
+            android:textColor="@color/colorHighlighted"
+            android:id="@+id/text_selected_object"
+            android:layout_width="230dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="10dp"
+            android:text="Andromeda"
+            android:autoSizeTextType="uniform"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <Button
+            android:id="@+id/button_ok"
+            android:layout_width="70dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginRight="16dp"
+            android:text="OK"
+            android:layout_marginEnd="16dp"
+            app:backgroundTint="#2337a8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <SearchView
+        android:id="@+id/search"
+        android:paddingTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:imeOptions="actionUnspecified|actionGo|actionSend|actionDone|flagNoFullscreen"
+        android:iconifiedByDefault="false"
+        android:queryHint="Input name ..."
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frame_select_ok"/>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_marginTop="10dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search"/>
+
+
+    <TextView
+        android:textSize="18sp"
+        android:id="@+id/textViewNGC"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Enter NGC number (1 to 7840) : "
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radio_group"/>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_ok_NGC"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="74dp"
+        android:text="OK"
+        app:backgroundTint="#2337a8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/materialtextFieldNGC"
+        app:shapeAppearanceOverlay="@style/General.Button"/>
+
+
+    <TextView
+        android:textSize="18sp"
+        android:id="@+id/textViewHIP"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Loading Hipparcos Catalogue .."
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radio_group"/>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_ok_HIP"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="74dp"
+        android:text="OK"
+        app:backgroundTint="#2337a8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/materialtextField"
+        app:shapeAppearanceOverlay="@style/General.Button"/>
+
+
+    <androidx.core.widget.ContentLoadingProgressBar
+        android:id="@+id/progressBar2"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="170dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radio_group" style="?android:attr/progressBarStyle"/>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:enabled="true"
+        android:id="@+id/materialtextFieldNGC"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:boxStrokeColor="#00e676"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewNGC">
+
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:textSize="20sp"
+            android:id="@+id/editTextNGC"
+            android:background="@drawable/back_border"
+            android:paddingTop="20dp"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="8"
+            android:inputType="number"/>
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:enabled="true"
+        android:id="@+id/materialtextField"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:boxBackgroundColor="#84929e"
+        app:boxStrokeColor="#00e676"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewHIP">
+
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:textSize="20sp"
+            android:id="@+id/editTextHIP"
+            android:background="@drawable/back_border"
+            android:paddingTop="20dp"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="8"
+            android:inputType="number"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+</androidx.constraintlayout.widget.ConstraintLayout
+    >

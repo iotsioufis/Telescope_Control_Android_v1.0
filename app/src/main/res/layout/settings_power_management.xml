@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textSize="22dp"
+        android:textColor="@color/colorOff"
+        android:id="@+id/text_advanced_settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Mount&apos;s Power Management"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textSize="18dp"
+        android:textColor="@color/colorOff"
+        android:gravity="center_horizontal"
+        android:id="@+id/text_stepper_chips"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:text="Energy Saving Mode : "
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_advanced_settings"/>
+
+    <RadioGroup
+        android:theme="@style/RadioButtonStyle"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:id="@+id/radio_group_sky_model"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_stepper_chips">
+
+        <RadioButton
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textSize="16dp"
+            android:id="@+id/radio_ESM_ON"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:text="ON"/>
+
+        <RadioButton
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textSize="16dp"
+            android:id="@+id/radio_ESM_OFF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:checked="true"
+            android:text="OFF"/>
+
+    </RadioGroup>
+
+    <TextView
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="@color/colorOff"
+        android:id="@+id/text_info_sky_model"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="ON :
+\n\nWhen a motor is not in use  , it will be temporarily disabled to lower its energy consumption .
+\nOn a command for a new move , the motor will be re-enabled .
+\nMotors are auto-enabled and auto-disabled independently . "
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radio_group_sky_model"/>
+
+    <TextView
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="@color/colorOff"
+        android:id="@+id/text_info_ESM_off"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="OFF :\n\nBoth motors are always enabled . "
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_info_sky_model"/>
+
+    <TextView
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="@color/colorOff"
+        android:id="@+id/text_info_ESM_accuracy"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:text="Note for pointing accuracy :
+\n\nIt is recommended to turn Energy Saving Mode OFF , during a star alignmnet and during a backlash fix procedure .
+\nWhen the best pointing accuracy is required , Energy Saving Mode should be OFF ."
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_info_ESM_off"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

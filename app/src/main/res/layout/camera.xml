@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <SurfaceView
+        android:id="@+id/surfaceView_camera"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_up_camera"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="12dp"
+        android:scaleY="1.3"
+        android:rotation="270"
+        app:backgroundTint="#2337a8"
+        app:icon="@android:drawable/ic_media_play"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/surfaceView_camera"
+        app:shapeAppearanceOverlay="@style/direction.Button"
+        style="@style/Widget.MaterialComponents.Button.Icon"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_right_camera"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="10dp"
+        android:scaleY="1.3"
+        app:backgroundTint="#2337a8"
+        app:icon="@android:drawable/ic_media_play"
+        app:layout_constraintStart_toEndOf="@+id/button_stop_camera"
+        app:layout_constraintTop_toTopOf="@+id/button_stop_camera"
+        app:shapeAppearanceOverlay="@style/direction.Button"
+        style="@style/Widget.MaterialComponents.Button.Icon"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_left_camera"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginRight="8dp"
+        android:scaleY="1.3"
+        android:rotation="180"
+        app:backgroundTint="#2337a8"
+        app:icon="@android:drawable/ic_media_play"
+        app:layout_constraintEnd_toStartOf="@+id/button_stop_camera"
+        app:layout_constraintTop_toTopOf="@+id/button_right_camera"
+        app:shapeAppearanceOverlay="@style/direction.Button"
+        style="@style/Widget.MaterialComponents.Button.Icon"/>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_open_close_camera"
+        android:layout_width="125dp"
+        android:layout_height="58dp"
+        android:layout_marginRight="4dp"
+        android:text="close camera"
+        android:scaleX="0.7"
+        android:scaleY="0.7"
+        android:rotation="0"
+        app:backgroundTint="#2337a8"
+        app:layout_constraintBottom_toBottomOf="@+id/surfaceView_camera"
+        app:layout_constraintStart_toStartOf="parent"
+        app:shapeAppearanceOverlay="@style/General.Button"
+        style="@style/Widget.MaterialComponents.Button.Icon"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_open_auto_centering"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        android:layout_width="125dp"
+        android:layout_height="58dp"
+        android:rotation="0"
+        android:scaleX="0.7"
+        android:scaleY="0.7"
+        android:text="auto centering"
+        app:backgroundTint="#2337a8"
+        app:layout_constraintEnd_toStartOf="@+id/button_for_alignment_camera"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button_open_close_camera"
+        app:layout_constraintTop_toTopOf="@+id/button_open_close_camera"
+        app:shapeAppearanceOverlay="@style/General.Button" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_for_alignment_camera"
+        android:layout_width="125dp"
+        android:layout_height="58dp"
+        android:layout_marginRight="4dp"
+        android:text="star centered"
+        android:scaleX="0.7"
+        android:scaleY="0.7"
+        android:rotation="0"
+        app:backgroundTint="#2337a8"
+        app:layout_constraintBottom_toBottomOf="@+id/surfaceView_camera"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:shapeAppearanceOverlay="@style/General.Button"
+        style="@style/Widget.MaterialComponents.Button.Icon"/>
+
+
+
+    <com.google.android.material.button.MaterialButton
+        android:textSize="12sp"
+        android:id="@+id/button_stop_camera"
+        android:paddingLeft="13dp"
+        android:paddingRight="13dp"
+        android:layout_width="64dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="1dp"
+        android:minHeight="0dp"
+        android:text="stop"
+        android:textScaleX="1"
+        android:scaleX="1.1"
+        android:scaleY="1.1"
+        app:backgroundTint="#b61313"
+        app:layout_constraintBottom_toTopOf="@+id/button_down_camera"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_up_camera"
+        app:shapeAppearanceOverlay="@style/Stop.Button"
+        style="@style/Widget.MaterialComponents.Button.Icon"/>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_down_camera"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:scaleY="1.3"
+        android:rotation="90"
+        app:backgroundTint="#2337a8"
+        app:icon="@android:drawable/ic_media_play"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="@+id/button_up_camera"
+        app:layout_constraintTop_toBottomOf="@+id/button_stop_camera"
+        app:shapeAppearanceOverlay="@style/direction.Button"
+        style="@style/Widget.MaterialComponents.Button.Icon"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_invert_ra"
+        android:layout_width="125dp"
+        android:layout_height="58dp"
+        android:text="Invert RA tags"
+        android:scaleX="0.6"
+        android:scaleY="0.6"
+        android:rotation="0"
+        app:backgroundTint="#2337a8"
+        app:layout_constraintEnd_toStartOf="@+id/button_invert_dec"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/General.Button"
+        style="@style/Widget.MaterialComponents.Button.Icon"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_invert_dec"
+        android:layout_width="125dp"
+        android:layout_height="58dp"
+        android:text="Invert Dec tags"
+        android:scaleX="0.6"
+        android:scaleY="0.6"
+        android:rotation="0"
+        app:backgroundTint="#2337a8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button_invert_ra"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/General.Button"
+        style="@style/Widget.MaterialComponents.Button.Icon"/>
+
+    <TextView
+        android:textSize="14sp"
+        android:textColor="#29bc34"
+        android:id="@+id/text_object_selected"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="42dp"
+        android:text="  Selected :  "
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/button_invert_ra"/>
+
+    <FrameLayout
+        android:id="@+id/frame_y"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/surfaceView_camera"
+        app:layout_constraintTop_toTopOf="@+id/surfaceView_camera">
+
+        <View
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/divider_camera_y1"
+            android:background="#d50000"
+            android:layout_width="2dp"
+            android:layout_height="match_parent"/>
+
+        <View
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/divider_camera_y2"
+            android:background="#d50000"
+            android:layout_width="2dp"
+            android:layout_height="match_parent"/>
+
+        <TextView
+            android:textColor="#d50000"
+            android:layout_gravity="top|center_vertical|center_horizontal|center"
+            android:id="@+id/text_ra_plus"
+            android:background="@drawable/crosshair_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="  RA +  "/>
+
+        <TextView
+            android:textColor="#d50000"
+            android:layout_gravity="bottom|center_vertical|center_horizontal|center"
+            android:id="@+id/text_ra_minus"
+            android:background="@drawable/crosshair_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text="  RA -  "/>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/frame_x"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:rotation="90"
+        app:layout_constraintBottom_toBottomOf="@+id/surfaceView_camera"
+        app:layout_constraintTop_toTopOf="@+id/surfaceView_camera">
+
+        <View
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/divider_camera_x1"
+            android:background="#d50000"
+            android:layout_width="2dp"
+            android:layout_height="match_parent"/>
+
+        <View
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/divider_camera_x2"
+            android:background="#d50000"
+            android:layout_width="2dp"
+            android:layout_height="match_parent"/>
+
+        <TextView
+            android:textColor="#d50000"
+            android:layout_gravity="top|center_vertical|center_horizontal|center"
+            android:id="@+id/text_dec_plus"
+            android:background="@drawable/crosshair_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text=" DEC + "/>
+
+        <TextView
+            android:textColor="#d50000"
+            android:layout_gravity="bottom|center_vertical|center_horizontal|center"
+            android:id="@+id/text_dec_minus"
+            android:background="@drawable/crosshair_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text=" DEC - "/>
+
+    </FrameLayout>
+
+    <com.google.android.material.slider.Slider
+        android:value="0"
+        android:id="@+id/slider_cross"
+        android:layout_width="170dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="80dp"
+        android:layout_marginEnd="80dp"
+        android:stepSize="1"
+        android:valueFrom="0"
+        android:valueTo="50"
+        android:translationX="-63dp"
+        android:scaleX="1"
+        android:scaleY="-1"
+        android:rotation="270"
+        app:haloColor="@color/colorHighlighted"
+        app:haloRadius="50dp"
+        app:layout_constraintBottom_toBottomOf="@+id/button_down_camera"
+        app:layout_constraintEnd_toEndOf="@+id/button_open_close_camera"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/surfaceView_camera"
+        app:thumbColor="#2337a8"
+        app:thumbRadius="15dp"
+        app:tickColorActive="#b61313"
+        app:tickColorInactive="#b61313"
+        app:trackColorActive="#b61313"
+        app:trackColorInactive="#b61313"
+        app:trackHeight="6dp"/>
+
+    <com.google.android.material.slider.Slider
+        android:value="1"
+        android:id="@+id/slider_cross_width"
+        android:layout_width="170dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="0dp"
+        android:stepSize="1"
+        android:valueFrom="1"
+        android:valueTo="5"
+        android:rotation="270"
+        app:haloColor="@color/colorHighlighted"
+        app:haloRadius="50dp"
+        app:layout_constraintBottom_toBottomOf="@+id/button_down_camera"
+        app:layout_constraintStart_toStartOf="@+id/button_for_alignment_camera"
+        app:layout_constraintTop_toBottomOf="@+id/surfaceView_camera"
+        app:thumbColor="#2337a8"
+        app:thumbRadius="15dp"
+        app:tickColorActive="#b61313"
+        app:tickColorInactive="#b61313"
+        app:trackColorActive="#b61313"
+        app:trackColorInactive="#b61313"
+        app:trackHeight="6dp"/>
+
+    <com.google.android.material.slider.Slider
+        android:value="0"
+        android:id="@+id/slider_cross_rotate"
+        android:layout_width="400dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="0dp"
+        android:stepSize="1"
+        android:valueFrom="0"
+        android:valueTo="360"
+        android:rotation="270"
+        app:haloColor="@color/colorHighlighted"
+        app:haloRadius="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/button_for_alignment_camera"
+        app:layout_constraintStart_toStartOf="@+id/button_for_alignment_camera"
+        app:layout_constraintTop_toTopOf="@+id/surfaceView_camera"
+        app:thumbColor="#d82337a8"
+        app:thumbRadius="10dp"
+        app:tickColor="#00f8f7f5"
+        app:trackColorActive="#5cf8f7f5"
+        app:trackColorInactive="#5cf8f7f5"
+        app:trackHeight="2dp"/>
+
+    <com.google.android.material.slider.Slider
+        android:value="0"
+        android:id="@+id/slider_camera_zoom"
+        android:layout_width="400dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:stepSize="1"
+        android:valueFrom="0"
+        android:valueTo="10"
+        android:translationX="25dp"
+        android:scaleX="1"
+        android:scaleY="-1"
+        android:rotation="270"
+        app:haloColor="@color/colorHighlighted"
+        app:haloRadius="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/button_open_close_camera"
+        app:layout_constraintEnd_toStartOf="@+id/button_open_close_camera"
+        app:layout_constraintTop_toTopOf="@+id/surfaceView_camera"
+        app:thumbColor="#d82337a8"
+        app:thumbRadius="10dp"
+        app:tickColor="#00f8f7f5"
+        app:trackColorActive="#5cf8f7f5"
+        app:trackColorInactive="#5cf8f7f5"
+        app:trackHeight="2dp"/>
+
+    <TextView
+        android:textSize="13sp"
+        android:textColor="@color/colorHighlighted"
+        android:id="@+id/text_cross_spacing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:text="Crosshair \n Spacing "
+        android:translationY="-10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/slider_cross"/>
+
+    <TextView
+        android:textSize="13sp"
+        android:textColor="@color/colorHighlighted"
+        android:id="@+id/text_cross_witdth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="2dp"
+        android:layout_marginBottom="20dp"
+        android:text=" Line \nWidth "
+        android:translationY="-10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/slider_cross"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/frame_add_to_alignment"
+        android:background="@drawable/back_border"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:elevation="40dp"
+        app:layout_constraintBottom_toBottomOf="@+id/button_for_alignment_camera"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:textSize="16sp"
+            android:textColor="#676871"
+            android:gravity="center_horizontal"
+            android:id="@+id/text_add_to_alignment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="10dp"
+            android:text="Star Alignment already done .\n\nAdd this star as an extra alignment point ?   "
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+
+        <Button
+            android:id="@+id/button_add_to_alignment"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:text="add"
+            android:scaleX="0.9"
+            android:scaleY="0.9"
+            app:backgroundTint="#2337a8"
+            app:layout_constraintEnd_toStartOf="@+id/button_cancel_add_to_alignment"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_add_to_alignment"/>
+
+        <Button
+            android:id="@+id/button_cancel_add_to_alignment"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="CANCEL"
+            android:scaleX="0.9"
+            android:scaleY="0.9"
+            app:backgroundTint="#2337a8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/button_add_to_alignment"
+            app:layout_constraintTop_toTopOf="@+id/button_add_to_alignment"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

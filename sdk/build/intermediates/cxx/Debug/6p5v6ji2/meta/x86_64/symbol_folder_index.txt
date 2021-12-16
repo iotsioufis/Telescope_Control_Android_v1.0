@@ -1,0 +1,1 @@
+C:\Users\john\AndroidStudioProjects\telescope_control-local-copy\sdk\build\intermediates\cxx\Debug\6p5v6ji2\obj\x86_64

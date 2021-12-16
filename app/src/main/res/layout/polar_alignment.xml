@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" 
+android:layout_width="match_parent" 
+android:layout_height="match_parent">
+
+    <TextView 
+android:textAppearance="@style/TextAppearance.AppCompat.Body2" 
+android:textSize="18sp" 
+android:gravity="center_horizontal" 
+android:id="@+id/text_polar_alignment" 
+android:layout_width="wrap_content" 
+android:layout_height="wrap_content" 
+android:layout_marginTop="15dp" 
+android:text="Polar Alignment Utility " 
+app:layout_constraintEnd_toEndOf="parent" 
+app:layout_constraintStart_toStartOf="parent" 
+app:layout_constraintTop_toTopOf="parent"/>
+
+    <com.google.android.material.button.MaterialButton 
+android:id="@+id/button_show_polar_alignment_help" 
+android:layout_width="68dp" 
+android:layout_height="73dp" 
+android:translationX="12dp" 
+android:translationY="-9dp" 
+android:scaleX="0.6" 
+android:scaleY="0.6" 
+android:rotation="0" 
+android:elevation="30dp" 
+app:backgroundTint="#2337a8" 
+app:icon="@android:drawable/ic_dialog_info" 
+app:iconSize="40dp" 
+app:layout_constraintEnd_toEndOf="parent" 
+app:layout_constraintTop_toTopOf="parent" 
+app:shapeAppearanceOverlay="@style/Help.Button"/>
+
+    <com.google.android.material.button.MaterialButton 
+android:id="@+id/button_get_polaris_position" 
+android:layout_width="wrap_content" 
+android:layout_height="0dp" 
+android:layout_marginTop="10dp" 
+android:text="Update current\nPolaris Position" 
+android:scaleX="0.7" 
+android:scaleY="0.7" 
+android:rotation="0" 
+android:elevation="20dp" 
+app:backgroundTint="#2337a8" 
+app:iconSize="35dp" 
+app:layout_constraintEnd_toEndOf="parent" 
+app:layout_constraintStart_toStartOf="parent" 
+app:layout_constraintTop_toBottomOf="@+id/text_polaris_ha" 
+app:shapeAppearanceOverlay="@style/General.Button" style="@style/Widget.MaterialComponents.Button.Icon"/>
+
+    <com.google.android.material.button.MaterialButton 
+android:id="@+id/button_polar_alignment_camera_open" 
+android:layout_width="wrap_content" 
+android:layout_height="0dp" 
+android:layout_marginTop="20dp" 
+android:text="Open\ncamera Utility" 
+android:scaleX="0.7" 
+android:scaleY="0.7" 
+android:rotation="0" 
+android:elevation="20dp" 
+app:backgroundTint="#2337a8" 
+app:iconSize="35dp" 
+app:layout_constraintEnd_toEndOf="parent" 
+app:layout_constraintStart_toStartOf="parent" 
+app:layout_constraintTop_toBottomOf="@+id/text_polar_using_camera2" 
+app:shapeAppearanceOverlay="@style/General.Button" style="@style/Widget.MaterialComponents.Button.Icon"/>
+
+    <TextView 
+android:textAppearance="@style/TextAppearance.AppCompat.Body2" 
+android:textSize="13sp" 
+android:id="@+id/text_polar_alignment_info" 
+android:layout_width="wrap_content" 
+android:layout_height="wrap_content" 
+android:layout_marginTop="20dp" 
+android:text="Current Hour Angle of Polaris :" 
+app:layout_constraintEnd_toEndOf="parent" 
+app:layout_constraintStart_toStartOf="parent" 
+app:layout_constraintTop_toBottomOf="@+id/outer_circle"/>
+
+    <TextView 
+android:textAppearance="@style/TextAppearance.AppCompat.Body2" 
+android:textSize="15sp" 
+android:id="@+id/text_using_polar_scope" 
+android:layout_width="wrap_content" 
+android:layout_height="wrap_content" 
+android:layout_marginTop="30dp" 
+android:text="Polar Alignment using a Polar Scope " 
+app:layout_constraintEnd_toEndOf="parent" 
+app:layout_constraintStart_toStartOf="parent" 
+app:layout_constraintTop_toBottomOf="@+id/text_polar_alignment"/>
+
+    <TextView 
+android:textAppearance="@style/TextAppearance.AppCompat.Body2" 
+android:textSize="13sp" 
+android:id="@+id/text_place_polaris" 
+android:layout_width="wrap_content" 
+android:layout_height="wrap_content" 
+android:layout_marginTop="22dp" 
+android:text="Current position of Polaris \n       in the Polar Scope : " 
+app:layout_constraintEnd_toEndOf="parent" 
+app:layout_constraintStart_toStartOf="parent" 
+app:layout_constraintTop_toBottomOf="@+id/text_using_polar_scope"/>
+
+    <TextView 
+android:textAppearance="@style/TextAppearance.AppCompat.Body2" 
+android:textSize="13sp" 
+android:id="@+id/text_polaris_ha" 
+android:layout_width="wrap_content" 
+android:layout_height="wrap_content" 
+android:layout_marginTop="5dp" 
+android:text="00:00:00" 
+app:layout_constraintEnd_toEndOf="parent" 
+app:layout_constraintStart_toStartOf="parent" 
+app:layout_constraintTop_toBottomOf="@+id/text_polar_alignment_info"/>
+
+    <TextView 
+android:textAppearance="@style/TextAppearance.AppCompat.Body2" 
+android:textSize="15sp" 
+android:id="@+id/text_polar_using_camera" 
+android:layout_width="wrap_content" 
+android:layout_height="wrap_content" 
+android:layout_marginTop="60dp" 
+android:text="Polar Alignment using the Camera Utility : " 
+app:layout_constraintEnd_toEndOf="parent" 
+app:layout_constraintStart_toStartOf="parent" 
+app:layout_constraintTop_toBottomOf="@+id/button_get_polaris_position"/>
+
+    <TextView 
+android:textAppearance="@style/TextAppearance.AppCompat.Body2" 
+android:textSize="13sp" 
+android:id="@+id/text_polar_using_camera2" 
+android:layout_width="wrap_content" 
+android:layout_height="wrap_content" 
+android:layout_marginTop="20dp" 
+android:text="Open the Camera Utility to perform a Drift Alignment : " 
+app:layout_constraintEnd_toEndOf="parent" 
+app:layout_constraintStart_toStartOf="parent" 
+app:layout_constraintTop_toBottomOf="@+id/text_polar_using_camera"/>
+
+    <TextView 
+android:textAppearance="@style/TextAppearance.AppCompat.Body2" 
+android:textSize="13sp" 
+android:id="@+id/text_polar_for_more_info" 
+android:layout_width="wrap_content" 
+android:layout_height="wrap_content" 
+android:layout_marginTop="20dp" 
+android:text="For more details , press the information button on the top-right corner .\n  " 
+app:layout_constraintEnd_toEndOf="parent" 
+app:layout_constraintStart_toStartOf="parent" 
+app:layout_constraintTop_toBottomOf="@+id/button_polar_alignment_camera_open"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout 
+android:id="@+id/inner_circle" 
+android:background="@drawable/ic_polarclock" 
+android:layout_width="282dp" 
+android:layout_height="281dp" 
+android:layout_marginTop="57dp" 
+app:layout_constraintEnd_toEndOf="parent" 
+app:layout_constraintHorizontal_bias="0.5" 
+app:layout_constraintStart_toStartOf="parent" 
+app:layout_constraintTop_toBottomOf="@+id/text_using_polar_scope"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout 
+android:id="@+id/outer_circle" 
+android:background="@drawable/circle" 
+android:layout_width="290dp" 
+android:layout_height="290dp" 
+android:layout_marginTop="53dp" 
+android:rotation="0" 
+app:layout_constraintEnd_toEndOf="parent" 
+app:layout_constraintHorizontal_bias="0.5" 
+app:layout_constraintStart_toStartOf="parent" 
+app:layout_constraintTop_toBottomOf="@+id/text_using_polar_scope">
+
+        <androidx.constraintlayout.widget.ConstraintLayout 
+android:id="@+id/polaris_circle" 
+android:background="@drawable/ic_crosshair_polaris" 
+android:layout_width="40dp" 
+android:layout_height="40dp" 
+android:translationY="-1dp" 
+android:elevation="22dp" 
+app:layout_constraintBottom_toBottomOf="@+id/outer_circle" 
+app:layout_constraintEnd_toEndOf="parent" 
+app:layout_constraintHorizontal_bias="0.5" 
+app:layout_constraintStart_toStartOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout 
+android:id="@+id/frame_polar_alignment_info" 
+android:background="@drawable/back_border" 
+android:visibility="gone" 
+android:layout_width="match_parent" 
+android:layout_height="match_parent" 
+android:elevation="29dp" 
+app:layout_constraintStart_toStartOf="parent" 
+app:layout_constraintTop_toTopOf="parent">
+
+        <TextView 
+android:textAppearance="@style/TextAppearance.AppCompat.Body2" 
+android:textSize="14sp" 
+android:id="@+id/text_nearest_star_info" 
+android:layout_width="match_parent" 
+android:layout_height="match_parent" 
+android:layout_marginLeft="10dp" 
+android:layout_marginTop="10dp" 
+android:layout_marginRight="10dp" 
+android:text="How to Polar align using a Polar Scope :
+\n\nFor the Northern Hemisphere , the star Polaris can be used to perfrom a polar alignment .
+\n1. Start by roughly aligning the mount in the direction of the North Celestial Pole.
+\nThis can be accomplished by physically moving the mount and aiming the polar axis in a general North direction.
+\n2. Level the tripod of the mount .
+\n3. Use the knobs that control the Altitude and the Azimuth of the mount , to place Polaris inside the field of view of the Polar scope .
+\n4. Press UPDATE CURRENT POLARIS POSITION to get the position where Polaris should be placed in the Polar Scope .
+\n5. Use the knobs that control the Altitude and the Azimuth and get Polaris in the exact same position in the Polar scope .
+\n\nHow to Polar align using the Drift Alignment Method :
+\n\nIf the Android device is mounted on the eyepiece , after a GOTO to a suitable star (as explained bellow), select OPEN CAMERA UTILITY from the Polar Alignment screen or from the Controls screen to use the crosshair , rotation , spacing and zooming capabilities of the utility , for an easier drift alignment.
+\nThe purpose of the Drift Alignment is to eliminate any drift after a star is centered and while tracking is enabled. When there is no observable drift , the mount is successfully polar aligned .
+\nNote that tracking is required to be enable while checking for any drift ,so after having the star centered ,from the Home Screen select TRACKING IS ENABLED.You can zoom in the star with the left camera slider so any drift is quickly observable .
+\n\nPart 1
+\n1. Direct the telescope to a bright star that is about 20 degrees above the Eastern Horizon, near the Celestial Equator (  0 degrees DEC) .
+\n2. At this point , the east/west rotation of the mount has little effect .On the contrary , at this point , a wrong elevation (Altitude) angle is having a greater effect , which is easier to detect and correct .
+\n3. Now , if the star drifts NORTH , the polar axis is too low - change the axis to an angle further up in the sky (use the latitude knobs on the mount)
+\n4. But if the star drifts SOUTH , the polar axis is too high - change the axis to an angle further down toward the land (again , use the latitude knobs on the mount).
+\n5. To determine if the star is drifting north or south , allow the star to drift for a while.
+\n\nPart 2
+\n1.Point the telescope to a bright star on the Meridian and on the celestial equator . At this point the elevation of the mount (as corrected in the steps above) will have minumal effect , allowing to accurately correct the east/west rotation of the mount.         \n2. Now, if the star drifts NORTH, the polar axis is too far EAST - so rotate the mount further West ( rotate the mount clockwise while looking down at it , using the knobs that control the Azimuth) .
+\n3. If the star drifts SOUTH, the polar axis is too far WEST - so rotate the mount further East ( rotate the mount anti-clockwise while looking down at it , using the knobs that control the Azimuth).
+\n\nPart 3
+\n 1. Repeat these two steps a few times to increase the accuracy of the polar alignment - repeating Part 2 will allow to get Part 1 more accurate .
+\n\nHow to determine if the star “drifts NORTH” :
+\nlet the star drift for a while .
+\nThen using only the DEC controls ,(  the left or right button ) try to bring the star to the center of the eyepiece . when the star starts moving towards the center , leave the motor runnning .
+\nCheck if the telescope&apos;s optical tube is heading North. In that case ,the star drifts NORTH . (Recenter if the star moved beyond the center , while determining the direction)
+\n\nHow to determine if the star “drifts SOUTH” :
+\nlet the star drift for a while .
+\nThen using only the DEC controls (  left or right buttons ) try to bring the star to the center of the eyepiece . when the star starts moving towards the center , leave the motor runnning .
+\nCheck if the telescope's optical tube is heading South . In that case ,the star drifts SOUTH . (Recenter if the star moved beyond the center , while determining the direction)"
+android:layout_marginStart="10dp" 
+android:layout_marginEnd="10dp" 
+app:layout_constraintBottom_toBottomOf="parent" 
+app:layout_constraintTop_toTopOf="@+id/frame_polar_alignment_info"/>
+
+        <com.google.android.material.button.MaterialButton 
+android:id="@+id/button_close_polar_alignment_help" 
+android:layout_width="68dp" 
+android:layout_height="73dp" 
+android:translationX="12dp" 
+android:translationY="-9dp" 
+android:scaleX="0.6" 
+android:scaleY="0.6" 
+android:rotation="0" 
+android:elevation="30dp" 
+app:backgroundTint="#2337a8" 
+app:icon="@android:drawable/ic_menu_close_clear_cancel"
+app:iconSize="45dp" 
+app:iconTintMode="multiply"
+app:layout_constraintEnd_toEndOf="parent" 
+app:layout_constraintTop_toTopOf="parent" 
+app:shapeAppearanceOverlay="@style/Help.Button"/>
+
+        <Button 
+android:id="@+id/button_hide_polar_alignment_help" 
+android:layout_width="wrap_content" 
+android:layout_height="wrap_content" 
+android:layout_marginTop="20dp" 
+android:text="Close" 
+android:scaleX="0.8" 
+android:scaleY="0.8" 
+app:backgroundTint="#2337a8" 
+app:layout_constraintEnd_toEndOf="parent" 
+app:layout_constraintHorizontal_bias="0.5" 
+app:layout_constraintStart_toStartOf="parent" 
+app:layout_constraintTop_toBottomOf="@+id/text_nearest_star_info"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

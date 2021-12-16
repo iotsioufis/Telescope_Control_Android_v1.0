@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.button.MaterialButton
+        android:gravity="center_horizontal"
+        android:id="@+id/button_cancel"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_marginTop="300dp"
+        android:layout_marginRight="5dp"
+        android:text="Cancel"
+        android:scaleX="0.8"
+        android:scaleY="0.8"
+        android:rotation="0"
+        android:layout_marginEnd="5dp"
+        android:elevation="20dp"
+        app:backgroundTint="#2337a8"
+        app:iconTint="#dff8f7f5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_get_gps"
+        app:shapeAppearanceOverlay="@style/General.Button"
+        style="@style/Widget.MaterialComponents.Button.Icon"/>
+
+    <TextView
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textSize="22dp"
+        android:textColor="@color/colorOff"
+        android:id="@+id/text_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Set Location "
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ProgressBar
+        android:id="@+id/gps_progress_bar"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_get_gps"
+        style="?android:attr/progressBarStyle"/>
+
+    <TextView
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textSize="18sp"
+        android:textColor="@color/colorOff"
+        android:id="@+id/text_enter_location"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Enter Your Location :"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_set_manually"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_set_manually"
+        android:layout_width="wrap_content"
+        android:layout_height="58dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginRight="5dp"
+        android:text="Set\n Manually"
+        android:scaleX="0.8"
+        android:scaleY="0.8"
+        android:rotation="0"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:elevation="20dp"
+        app:backgroundTint="#2337a8"
+        app:icon="@drawable/ic_tap"
+        app:iconTint="#dff8f7f5"
+        app:layout_constraintEnd_toStartOf="@+id/button_get_gps"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_location"
+        app:shapeAppearanceOverlay="@style/General.Button"
+        style="@style/Widget.MaterialComponents.Button.Icon"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_get_gps"
+        android:layout_width="wrap_content"
+        android:layout_height="58dp"
+        android:layout_marginRight="5dp"
+        android:text="get \ngps location"
+        android:scaleX="0.75"
+        android:scaleY="0.8"
+        android:rotation="0"
+        android:layout_marginEnd="5dp"
+        android:elevation="20dp"
+        app:backgroundTint="#2337a8"
+        app:icon="@drawable/ic_location_pin"
+        app:iconTint="#dff8f7f5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button_set_manually"
+        app:layout_constraintTop_toTopOf="@+id/button_set_manually"
+        app:shapeAppearanceOverlay="@style/General.Button"
+        style="@style/Widget.MaterialComponents.Button.Icon"/>
+
+    <TextView
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textSize="18sp"
+        android:textColor="@color/colorOff"
+        android:id="@+id/text_latitude"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Latitude :"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_enter_location"/>
+
+    <EditText
+        android:id="@+id/editText_latitude"
+        android:background="@drawable/back_border"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:hint="35.210"
+        android:ems="5"
+        android:maxLength="10"
+        android:inputType="none|number|numberSigned|numberDecimal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_latitude"/>
+
+    <TextView
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textSize="18sp"
+        android:textColor="@color/colorOff"
+        android:id="@+id/text_longitude"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Longitude:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_latitude"/>
+
+    <EditText
+        android:id="@+id/editText_longitude"
+        android:background="@drawable/back_border"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        android:hint="18.380"
+        android:ems="5"
+        android:maxLength="10"
+        android:inputType="none|number|numberSigned|numberDecimal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_longitude"/>
+
+    <TextView
+        android:textSize="18sp"
+        android:textColor="@color/colorHighlighted"
+        android:id="@+id/textView_saved_latitude"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_set_manually"/>
+
+    <TextView
+        android:textSize="18sp"
+        android:textColor="@color/colorHighlighted"
+        android:id="@+id/textView_saved_longitude"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_saved_latitude"/>
+
+    <TextView
+        android:textSize="14sp"
+        android:textColor="@color/colorHighlighted"
+        android:id="@+id/textView_info_gps"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="Receiving GPS coordinates ..."
+        app:layout_constraintBottom_toTopOf="@+id/button_cancel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_save_location"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="58dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
+        android:text="Save Your\n Location"
+        android:scaleX="0.8"
+        android:scaleY="0.8"
+        android:rotation="0"
+        android:elevation="20dp"
+        app:backgroundTint="#2337a8"
+        app:icon="@drawable/ic_diskette"
+        app:iconTint="#dff8f7f5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_longitude"
+        app:shapeAppearanceOverlay="@style/General.Button"
+        style="@style/Widget.MaterialComponents.Button.Icon"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

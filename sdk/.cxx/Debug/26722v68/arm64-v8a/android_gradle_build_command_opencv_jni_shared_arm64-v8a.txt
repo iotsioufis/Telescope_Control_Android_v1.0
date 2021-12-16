@@ -1,0 +1,7 @@
+Executable : C:\Users\john\AppData\Local\Android\Sdk\cmake\3.10.2.4988404\bin\ninja.exe
+arguments : 
+-C
+C:\Users\john\AndroidStudioProjects\telescope_control-local-copy\sdk\.cxx\Debug\26722v68\arm64-v8a
+opencv_jni_shared
+jvmArgs : 
+
