@@ -27,7 +27,7 @@ public class CoordinatesTransformations {
         i0 - Initial row index
         i1 - Final row index
         j0 - Initial column index
-        j1 - Final column index */
+        j1 - Final column index*/
         double[] alpha = alignment_stars.getMatrix(0, 2, 0, 0).getColumnPackedCopy();
         double[] delta = alignment_stars.getMatrix(0, 2, 2, 2).getColumnPackedCopy();
         double[] phi = alignment_stars.getMatrix(0, 2, 1, 1).getColumnPackedCopy();
