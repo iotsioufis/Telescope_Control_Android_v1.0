@@ -48,11 +48,8 @@ import org.opencv.core.Scalar;
 import org.opencv.core.Size;
 import org.opencv.imgproc.Imgproc;
 
-import java.text.DecimalFormat;
-import java.text.DecimalFormatSymbols;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
 public class CrossTestFragment extends Fragment implements CameraBridgeViewBase.CvCameraViewListener2 {
     private SharedViewModel viewModel;
@@ -70,34 +67,29 @@ public class CrossTestFragment extends Fragment implements CameraBridgeViewBase.
     private static final int MY_CAMERA_REQUEST_CODE = 345;
     int activeCamera = CameraBridgeViewBase.CAMERA_ID_BACK;
     double threshold = 180;
-    boolean cross_test_started=false ;
-    List<double []> list_of_points = new ArrayList<double[]>();
-    Point checkpoint_0 = new Point(0,0);
-    Point checkpoint_1 = new Point(0 , 0);
-    Point checkpoint_2 = new Point(0 , 0);
-    Point checkpoint_3 = new Point(0 , 0);
-    Point checkpoint_4 = new Point(0 , 0);
-    Point checkpoint_5 = new Point(0 , 0);
-    Point checkpoint_6 = new Point(0 , 0);
+    boolean cross_test_started = false;
+    List<double[]> list_of_points = new ArrayList<double[]>();
+    Point checkpoint_0 = new Point(0, 0);
+    Point checkpoint_1 = new Point(0, 0);
+    Point checkpoint_2 = new Point(0, 0);
+    Point checkpoint_3 = new Point(0, 0);
+    Point checkpoint_4 = new Point(0, 0);
+    Point checkpoint_5 = new Point(0, 0);
+    Point checkpoint_6 = new Point(0, 0);
     double dec_cross_steps = 0;
     double ra_cross_steps = 0;
-    double distance_0_to_1=0;
-    double distance_2_to_3=0;
-    double distance_3_to_4=0;
-    double distance_5_to_6=0;
-    String distance_0_to_1_str="";
-    String distance_2_to_3_str="";
-    int calculated_dec_backlash_steps=0;
-    String distance_3_to_4_str="";
-    String distance_5_to_6_str="";
-    int calculated_ra_backlash_steps=0;
+    double distance_0_to_1 = 0;
+    double distance_2_to_3 = 0;
+    double distance_3_to_4 = 0;
+    double distance_5_to_6 = 0;
+    String distance_0_to_1_str = "";
+    String distance_2_to_3_str = "";
+    int calculated_dec_backlash_steps = 0;
+    String distance_3_to_4_str = "";
+    String distance_5_to_6_str = "";
+    int calculated_ra_backlash_steps = 0;
 
-
-
-
-    // List<double []> list_of_points = new ArrayList<double[]>();
-
-    static {
+        static {
         if (OpenCVLoader.initDebug()) {
             Log.d("TAG", "OpenCV installed sussessfully");
         } else {
@@ -117,8 +109,8 @@ public class CrossTestFragment extends Fragment implements CameraBridgeViewBase.
         getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         BottomNavigationView bottomNav = getActivity().findViewById(R.id.bottom_navigation);
         bottomNav.setVisibility(GONE);
-        detected_ra_backlash =v.findViewById(R.id.text_ra_backlash);
-        detected_dec_backlash =v.findViewById(R.id.text_dec_backlash);
+        detected_ra_backlash = v.findViewById(R.id.text_ra_backlash);
+        detected_dec_backlash = v.findViewById(R.id.text_dec_backlash);
         button_run_cross_test = v.findViewById(R.id.button_run_cross_test);
         button_clear_image = v.findViewById(R.id.button_clear_image);
         cross_test_frame = v.findViewById(R.id.frame_cross_test);
@@ -130,12 +122,6 @@ public class CrossTestFragment extends Fragment implements CameraBridgeViewBase.
         cameraView.setCvCameraViewListener(this);
         cameraView.enableFpsMeter();
 
-     /*   if(viewModel.getMoving_status().getValue().equals("motors stopped.")){
-
-            if(!viewModel.getTracking_status().getValue()){
-                viewModel.setTracking_status(true);
-                editor.putBoolean("tracking_is_on", true);
-                editor.apply();}}*/
 
         if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.CAMERA}, MY_CAMERA_REQUEST_CODE);
@@ -145,81 +131,59 @@ public class CrossTestFragment extends Fragment implements CameraBridgeViewBase.
 
         }
 
-        /*viewModel.get_cross_move_done().observe(getViewLifecycleOwner(), new Observer<Boolean>() {
-            @Override
-            public void onChanged(Boolean move_done) {
-                if(viewModel.get_cross_move_done().getValue()){
-                    if (distance_degrees >= 0.02 && auto_center_tries_counter < 4 ) {
-                        auto_center_run();
-                        auto_center_tries_counter++;
-                        viewModel.set_cross_move_done(false);
-                    }
-
-                }
-
-            }
-        });
-*/
-
         viewModel.get_cross_move_checkpoint().observe(getViewLifecycleOwner(), new Observer<Integer>() {
             @Override
             public void onChanged(Integer checkpoint_num) {
-                if(viewModel.get_cross_move_checkpoint().getValue()==1){
-                   checkpoint_1.x=brightest_point.x;
-                   checkpoint_1.y=brightest_point.y;
+                if (viewModel.get_cross_move_checkpoint().getValue() == 1) {
+                    checkpoint_1.x = brightest_point.x;
+                    checkpoint_1.y = brightest_point.y;
                 }
-                if(viewModel.get_cross_move_checkpoint().getValue()==2){
-                    checkpoint_2.x=brightest_point.x;
-                    checkpoint_2.y=brightest_point.y;
+                if (viewModel.get_cross_move_checkpoint().getValue() == 2) {
+                    checkpoint_2.x = brightest_point.x;
+                    checkpoint_2.y = brightest_point.y;
                 }
-                if(viewModel.get_cross_move_checkpoint().getValue()==3){
-                    checkpoint_3.x=brightest_point.x;
-                    checkpoint_3.y=brightest_point.y;
+                if (viewModel.get_cross_move_checkpoint().getValue() == 3) {
+                    checkpoint_3.x = brightest_point.x;
+                    checkpoint_3.y = brightest_point.y;
                 }
-                if(viewModel.get_cross_move_checkpoint().getValue()==4){
-                    checkpoint_4.x=brightest_point.x;
-                    checkpoint_4.y=brightest_point.y;
+                if (viewModel.get_cross_move_checkpoint().getValue() == 4) {
+                    checkpoint_4.x = brightest_point.x;
+                    checkpoint_4.y = brightest_point.y;
                 }
-                if(viewModel.get_cross_move_checkpoint().getValue()==5){
-                    checkpoint_5.x=brightest_point.x;
-                    checkpoint_5.y=brightest_point.y;
+                if (viewModel.get_cross_move_checkpoint().getValue() == 5) {
+                    checkpoint_5.x = brightest_point.x;
+                    checkpoint_5.y = brightest_point.y;
                 }
-                if(viewModel.get_cross_move_checkpoint().getValue()==6){
-                    checkpoint_6.x=brightest_point.x;
-                    checkpoint_6.y=brightest_point.y;
-                    distance_0_to_1 = sqrt((checkpoint_0.x - checkpoint_1.x) * (checkpoint_0.x - checkpoint_1.x) + (checkpoint_0.y - checkpoint_1.y) * (checkpoint_0.y - checkpoint_1.y));
+                if (viewModel.get_cross_move_checkpoint().getValue() == 6) {
+                    checkpoint_6.x = brightest_point.x;
+                    checkpoint_6.y = brightest_point.y;
+
+                    distance_0_to_1=calculate_distance(checkpoint_0,checkpoint_1);
+                    distance_2_to_3=calculate_distance(checkpoint_2,checkpoint_3);
+                    distance_3_to_4 =calculate_distance(checkpoint_3,checkpoint_4);
+                    distance_5_to_6 =calculate_distance(checkpoint_5,checkpoint_6);
                     distance_0_to_1_str = String.valueOf(distance_0_to_1);
-                    distance_2_to_3 = sqrt((checkpoint_2.x - checkpoint_3.x) * (checkpoint_2.x - checkpoint_3.x) + (checkpoint_2.y - checkpoint_3.y) * (checkpoint_2.y - checkpoint_3.y));
                     distance_2_to_3_str = String.valueOf(distance_2_to_3);
-                    distance_3_to_4 = sqrt((checkpoint_3.x - checkpoint_4.x) * (checkpoint_3.x - checkpoint_4.x) + (checkpoint_3.y - checkpoint_4.y) * (checkpoint_3.y - checkpoint_4.y));
                     distance_3_to_4_str = String.valueOf(distance_3_to_4);
-                    distance_5_to_6 = sqrt((checkpoint_5.x - checkpoint_6.x) * (checkpoint_5.x - checkpoint_6.x) + (checkpoint_5.y - checkpoint_6.y) * (checkpoint_5.y - checkpoint_6.y));
                     distance_5_to_6_str = String.valueOf(distance_5_to_6);
 
-                    //calculated_dec_backlash_steps=abs(dec_cross_steps)-abs((distance_2_to_3/distance_0_to_1)*dec_cross_steps);
-                   // calculated_ra_backlash_steps=abs(ra_cross_steps)-abs((distance_5_to_6/distance_3_to_4)*ra_cross_steps);
-                    calculated_dec_backlash_steps=(int)(dec_cross_steps*(distance_2_to_3-distance_0_to_1)/distance_0_to_1);
-                    calculated_ra_backlash_steps=(int)(ra_cross_steps*(distance_5_to_6-distance_3_to_4)/distance_3_to_4);
-                    Log.e("TAG", "distance_0_to_1_str  :" + distance_0_to_1_str);
-                    Log.e("TAG", "distance_2_to_3_str  :" + distance_2_to_3_str);
-                    Log.e("TAG", "distance_3_to_4_str  :" + distance_3_to_4_str);
-                    Log.e("TAG", "distance_5_to_6_str  :" + distance_5_to_6_str);
+                    calculated_dec_backlash_steps = (int) (dec_cross_steps * (distance_2_to_3 - distance_0_to_1) / distance_0_to_1);
+                    calculated_ra_backlash_steps = (int) (ra_cross_steps * (distance_5_to_6 - distance_3_to_4) / distance_3_to_4);
 
-                    detected_dec_backlash.setText("Detected DEC backlash error : " +  abs(calculated_dec_backlash_steps)+" microsteps"+ "\nApplied DEC backlash fix  : "+(-viewModel.get_dec_backlash_fix().getValue())+" microsteps");
-                    detected_ra_backlash.setText("Detected RA backlash  error : "+abs(calculated_ra_backlash_steps)+" microsteps"+"\nApplied RA backlash fix  : "+(-viewModel.get_ra_backlash_fix().getValue())+" microsteps");
+                    detected_dec_backlash.setText("Detected DEC backlash error : " + abs(calculated_dec_backlash_steps) + " microsteps" + "\nApplied DEC backlash fix  : " + (-viewModel.get_dec_backlash_fix().getValue()) + " microsteps");
+                    detected_ra_backlash.setText("Detected RA backlash  error : " + abs(calculated_ra_backlash_steps) + " microsteps" + "\nApplied RA backlash fix  : " + (-viewModel.get_ra_backlash_fix().getValue()) + " microsteps");
                     viewModel.set_cross_move_checkpoint(7);
-                    cross_test_started=false;
+                    cross_test_started = false;
 
                 }
-                if(viewModel.get_cross_move_checkpoint().getValue()==7){
+                if (viewModel.get_cross_move_checkpoint().getValue() == 7) {
 
-                    detected_dec_backlash.setText("Detected DEC backlash error : " +  abs(calculated_dec_backlash_steps)+" microsteps"+ "\nApplied DEC backlash fix  : "+(-viewModel.get_dec_backlash_fix().getValue())+" microsteps");
-                    detected_ra_backlash.setText("Detected RA backlash  error : "+abs(calculated_ra_backlash_steps)+" microsteps"+"\nApplied RA backlash fix  : "+(-viewModel.get_ra_backlash_fix().getValue())+" microsteps");
+                    detected_dec_backlash.setText("Detected DEC backlash error : " + abs(calculated_dec_backlash_steps) + " microsteps" + "\nApplied DEC backlash fix  : " + (-viewModel.get_dec_backlash_fix().getValue()) + " microsteps");
+                    detected_ra_backlash.setText("Detected RA backlash  error : " + abs(calculated_ra_backlash_steps) + " microsteps" + "\nApplied RA backlash fix  : " + (-viewModel.get_ra_backlash_fix().getValue()) + " microsteps");
                 }
 
             }
         });
-
 
 
 
@@ -232,7 +196,6 @@ public class CrossTestFragment extends Fragment implements CameraBridgeViewBase.
             }
 
         });
-
 
 
         button_run_cross_test.setOnClickListener(new View.OnClickListener() {
@@ -259,12 +222,12 @@ public class CrossTestFragment extends Fragment implements CameraBridgeViewBase.
                     if (degrees >= 0 && degrees <= 5) {
 
                         ra_cross_steps = sharedPreferences.getInt("ra_micro_1", 722) * degrees;
-                        dec_cross_steps = sharedPreferences.getInt("dec_micro_1", 361) * degrees ;
+                        dec_cross_steps = sharedPreferences.getInt("dec_micro_1", 361) * degrees;
                         Handler handler = MainActivity.handler;
                         handler.obtainMessage(MESSAGE_WRITE, "<cross_move:" + ((int) ra_cross_steps) + ":"
-                                + ((int) ( dec_cross_steps)) + ":>\n").sendToTarget();
+                                + ((int) (dec_cross_steps)) + ":>\n").sendToTarget();
                         cross_test_frame.setVisibility(GONE);
-                        cross_test_started=true;
+                        cross_test_started = true;
 
                         InputMethodManager imm = (InputMethodManager) getContext().getSystemService(Activity.INPUT_METHOD_SERVICE);
                         imm.hideSoftInputFromWindow(getView().getWindowToken(), 0);
@@ -288,8 +251,8 @@ public class CrossTestFragment extends Fragment implements CameraBridgeViewBase.
                 v.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY, HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING);
                 cross_test_frame.setVisibility(GONE);
                 slider_threshold.setVisibility(View.VISIBLE);
-                cross_test_started=false;
-                           }
+                cross_test_started = false;
+            }
         });
 
 
@@ -305,10 +268,6 @@ public class CrossTestFragment extends Fragment implements CameraBridgeViewBase.
         return v;
 
     }
-
-
-
-
 
 
     @Override
@@ -339,29 +298,24 @@ public class CrossTestFragment extends Fragment implements CameraBridgeViewBase.
     }
 
 
-
     Point brightest_point = new Point(0, 0);
     Point center = new Point(0, 0);
     Mat input_g;
     Mat mRgba;
     Scalar red = new Scalar(255, 0, 0);
-    Scalar white = new Scalar(255,255,255);
+    Scalar white = new Scalar(255, 255, 255);
     Scalar green = new Scalar(0, 255, 0);
     Scalar blue = new Scalar(0, 0, 255);
     Scalar yellow = new Scalar(255, 255, 0);
 
-    Size erode_kernel_size = new Size((threshold * 2) + 1, (threshold * 2) + 1);
     List<MatOfPoint> contours = new ArrayList<>();
-    Point contour_center = new Point(0, 0);
+    Point max_contour_center = new Point(0, 0);
     Mat hierarchy = new Mat();
-    double maxVal = 0;
-    int maxValIdx = 0;
-    double contourArea = 0;
-    MatOfPoint2f c2f = new MatOfPoint2f();
+    double max_contour_area = 0;
+    int max_contour_area_id = 0;
+    double contour_area = 0;
+    MatOfPoint2f max_contour_area_2f = new MatOfPoint2f();
     float[] radius = new float[1];
-
-
-
 
 
     @Override
@@ -370,8 +324,7 @@ public class CrossTestFragment extends Fragment implements CameraBridgeViewBase.
         input_g = inputFrame.gray();
         center.x = input_g.cols() / 2.0;
         center.y = input_g.rows() / 2.0;
-        erode_kernel_size.width = (threshold * 2) + 1;
-        erode_kernel_size.height = (threshold * 2) + 1;
+
         Imgproc.GaussianBlur(input_g, input_g, new Size(5, 5), 25);
         Imgproc.threshold(input_g, input_g, (int) threshold, 255, Imgproc.THRESH_BINARY);
         Imgproc.findContours(input_g, contours, hierarchy, Imgproc.RETR_EXTERNAL, Imgproc.CHAIN_APPROX_TC89_KCOS);
@@ -379,58 +332,37 @@ public class CrossTestFragment extends Fragment implements CameraBridgeViewBase.
 
         if (contours.size() > 0) {
 
-            maxVal = 0;
-            maxValIdx = 0;
+            max_contour_area = 0;
+            max_contour_area_id = 0;
             for (int contourIdx = 0; contourIdx < contours.size(); contourIdx++) {
-                contourArea = Imgproc.contourArea(contours.get(contourIdx));
-                if (maxVal < contourArea) {
-                    maxVal = contourArea;
-                    maxValIdx = contourIdx;
+                contour_area = Imgproc.contourArea(contours.get(contourIdx));
+                if (contour_area > max_contour_area) {
+                    max_contour_area = contour_area;
+                    max_contour_area_id = contourIdx;
                 }
             }
-            Imgproc.drawContours(mRgba, contours, maxValIdx, green, 2);
-            c2f = new MatOfPoint2f(contours.get(maxValIdx).toArray());
-            c2f.fromArray(contours.get(maxValIdx).toArray());
-            Imgproc.minEnclosingCircle(c2f, contour_center, radius);
-            Imgproc.circle(mRgba, contour_center, (int)radius[0], red, 2);
-            brightest_point.x = contour_center.x;
-            brightest_point.y = contour_center.y;
+            Imgproc.drawContours(mRgba, contours, max_contour_area_id, green, 2);
+            max_contour_area_2f = new MatOfPoint2f(contours.get(max_contour_area_id).toArray()); //convert MatOfPoint to MatOfPoint2f
+            max_contour_area_2f.fromArray(contours.get(max_contour_area_id).toArray());
+            Imgproc.minEnclosingCircle(max_contour_area_2f, max_contour_center, radius);
+            Imgproc.circle(mRgba, max_contour_center, (int) radius[0], red, 2);
+            brightest_point.x = max_contour_center.x;
+            brightest_point.y = max_contour_center.y;
 
         }
 
 
-       // define_mean_position();
-
-
-        if ( cross_test_started) {
-            list_of_points.add(new double [] {brightest_point.x,brightest_point.y});
+        if (cross_test_started) {
+            list_of_points.add(new double[]{brightest_point.x, brightest_point.y});
         }
 
-        if(viewModel.get_cross_move_done().getValue()){
+        if (viewModel.get_cross_move_done().getValue()) {
 
-
-          /* for(int i=0;i<list_of_points.size();i++){
-                test_point.x=list_of_points.get(i)[0];
-                test_point.y=list_of_points.get(i)[1];
-                Imgproc.circle(mRgba, test_point, 2, red, 2);
-
-            }*/
-
-           /* Imgproc.circle(mRgba, checkpoint_0, 10, red, 5);
-            Imgproc.circle(mRgba, checkpoint_1, 10, red, 5);
-            Imgproc.circle(mRgba, checkpoint_2, 10, red, 5);
-            Imgproc.circle(mRgba, checkpoint_3, 10, red, 5);
-            Imgproc.circle(mRgba, checkpoint_4, 10, red, 5);
-            Imgproc.circle(mRgba, checkpoint_5, 10, red, 5);
-            Imgproc.circle(mRgba, checkpoint_6, 10, red, 5);
-*/
             Imgproc.line(mRgba, checkpoint_0, checkpoint_1, green, 3, 16);
             Imgproc.line(mRgba, checkpoint_2, checkpoint_3, blue, 3, 16);
             Imgproc.line(mRgba, checkpoint_3, checkpoint_4, red, 4, 16);
             Imgproc.line(mRgba, checkpoint_5, checkpoint_6, white, 3, 16);
-            Imgproc.line(mRgba, checkpoint_0, checkpoint_3, yellow , 3, 16);
-
-
+            Imgproc.line(mRgba, checkpoint_0, checkpoint_3, yellow, 3, 16);
 
         }
 
@@ -444,8 +376,6 @@ public class CrossTestFragment extends Fragment implements CameraBridgeViewBase.
         return mRgba;
 
     }
-
-
 
 
     // callback to be executed after the user has given approval or rejection via system prompt
@@ -466,15 +396,17 @@ public class CrossTestFragment extends Fragment implements CameraBridgeViewBase.
         }
     }
 
+    private double calculate_distance(Point point_1, Point point_2){
+     double calulated_distance=sqrt((point_1.x - point_2.x) * (point_1.x - point_2.x) + (point_1.y - point_2.y) * (point_1.y - point_2.y));
+     return calulated_distance;
+    }
+
     private void initializeCamera(JavaCameraView javaCameraView, int activeCamera) {
         javaCameraView.setCameraPermissionGranted();
         javaCameraView.setCameraIndex(activeCamera);
         javaCameraView.setVisibility(CameraBridgeViewBase.VISIBLE);
         javaCameraView.setCvCameraViewListener(this);
     }
-
-
-
 
 
 }

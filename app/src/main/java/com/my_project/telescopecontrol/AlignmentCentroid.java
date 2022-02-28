@@ -12,7 +12,6 @@ import static java.lang.Math.sin;
 
 public class AlignmentCentroid {
 
-    Matrix associated_transformation_matrix;
     AlignmentPoint associated_point_1;
     AlignmentPoint associated_point_2;
     AlignmentPoint associated_point_3;

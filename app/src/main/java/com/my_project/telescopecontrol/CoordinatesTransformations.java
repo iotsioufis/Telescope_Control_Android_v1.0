@@ -22,7 +22,12 @@ public class CoordinatesTransformations {
         double[][] telescope_dir_cosine_array = {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}};
         double[][] equatorial_dir_cosine_array = {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}};
 
-        //alpha =get first column of alignment_stars
+       /*  getMatrix:Get a submatrix.
+             Parameters:
+        i0 - Initial row index
+        i1 - Final row index
+        j0 - Initial column index
+        j1 - Final column index */
         double[] alpha = alignment_stars.getMatrix(0, 2, 0, 0).getColumnPackedCopy();
         double[] delta = alignment_stars.getMatrix(0, 2, 2, 2).getColumnPackedCopy();
         double[] phi = alignment_stars.getMatrix(0, 2, 1, 1).getColumnPackedCopy();
@@ -108,14 +113,6 @@ public class CoordinatesTransformations {
 
 
         Log.e(TAG, "alignment_stars_matrix inside CoordinatesTansformatios :\n " + strung(alignment_stars));
-        //Log.e(TAG, "transformation_matrix inside CoordinatesTansformatios :\n " + strung(transformation_matrix));
-        // Log.e(TAG, "alpha is :\n " + alpha[0]);
-        //  Log.e(TAG, "delta is :\n " + strung(delta));
-        //   Log.e(TAG, "phi is :\n " + strung(phi));
-        //  Log.e(TAG, "theta is :\n " + strung(theta));
-        //  Log.e(TAG, "t is :\n " + strung(t));
-
-
         return transformation_matrix;
 
     }
@@ -140,7 +137,7 @@ public class CoordinatesTransformations {
 
 
         double[] transformed_coordinates = {ra_transformed, dec_tranformed};
-        Matrix transformed_coords = new Matrix(transformed_coordinates, 1);
+        //Matrix transformed_coords = new Matrix(transformed_coordinates, 1);
         //Log.e(TAG, "transformed_coords are :\n " + strung(transformed_coords));
         return transformed_coordinates;
     }

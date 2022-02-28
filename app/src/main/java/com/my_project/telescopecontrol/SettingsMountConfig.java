@@ -291,16 +291,16 @@ public class SettingsMountConfig extends Fragment {
 
         // microsteps needed for ONE degree rotation  of the DEC MOUNT's axis:
         double DEC_micro_1 = DEC_micro_360 / 360.0;
-        //sidereal day( 24h - 56 minutes, 4.0905 in seconds), constant:
+        //sidereal day( 24h , 56 minutes, 4.0905 seconds), constant:
         double s_day_in_secs = 86164.0905;
         //arcseconds for a full Earth rotation,  used for determining sidereal and tracking rate in
-        //microsteps .contant: 1296000
+        //microsteps .constant: 1296000
         int earth_arcsec_360 = 360 * 60 * 60;
 
-        // %Earth's rotation rate in arcsecond per second:
+        // Earth's rotation rate in arcsecond per second:
         double Earth_rotation_rate = earth_arcsec_360 / s_day_in_secs;
 
-        // %microstep/arcseconds of RA motor:
+        //microstep/arcseconds of RA motor:
 
         double microsteps_per_arcsec = RA_micro_360 / (double) earth_arcsec_360;
 
@@ -313,9 +313,7 @@ public class SettingsMountConfig extends Fragment {
 
 
         String ra_speed_str = viewModel.getRASpeed().getValue().toString();
-        double d3 = Earth_rotation_rate;
         String dec_speed_str = viewModel.getDECSpeed().getValue().toString();
-        double d4 = microsteps_per_arcsec;
 
         String sidereal_rate_str = String.format(Locale.ENGLISH, "%.7f", sidereal_tracking_rate);
         String RA_micro_1_X4_mode_str = String.format(Locale.ENGLISH, "%.3f", RA_micro_1 / 4);
@@ -341,7 +339,6 @@ public class SettingsMountConfig extends Fragment {
         }
 
         String command_to_send = "<config:" + ra_speed_str + ":" + dec_speed_str + ":" + sidereal_rate_str + ":" + is_ra_motor_inverted_str + ":" + is_dec_motor_inverted_str + ":>\n";
-        String str = ra_speed_str;
         MainActivity.handler.obtainMessage(MESSAGE_WRITE, command_to_send).sendToTarget();
         viewModel.setConfig_command(command_to_send);
         SharedPreferences sharedPreferences3 = getContext().getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);

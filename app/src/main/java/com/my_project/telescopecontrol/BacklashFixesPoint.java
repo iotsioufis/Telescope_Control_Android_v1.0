@@ -33,9 +33,4 @@ public class BacklashFixesPoint {
         return this.side_of_meridian;
     }
 
-
-
-
-
-
 }

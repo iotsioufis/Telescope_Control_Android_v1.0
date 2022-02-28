@@ -7,8 +7,6 @@ import com.google.gson.annotations.SerializedName;
 import Jama.Matrix;
 
 public class AlignmentPoint {
-    public Matrix associated_initial_matrix;
-    public Matrix associated_offset_matrix;
     public Matrix associated_transformation_matrix;
     private double corrected_dec;
     private double corrected_ha;
@@ -73,13 +71,8 @@ public class AlignmentPoint {
         this.associated_transformation_matrix = associated_transformation_matrix;
     }
 
-    public void associate_initial_matrix(Matrix associated_initial_matrix) {
-        this.associated_initial_matrix = associated_initial_matrix;
-    }
 
-    public void associate_offset_matrix(Matrix associated_offset_matrix) {
-        this.associated_offset_matrix = associated_offset_matrix;
-    }
+
 
 
     @NonNull

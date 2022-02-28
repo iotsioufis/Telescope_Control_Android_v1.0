@@ -199,8 +199,6 @@ public class FixBacklashFragment extends CameraFragment {
                 if (test_fix.getText().equals("Check DEC \n fix") && !edit_steps.getText().toString().equals("")) {
                     test_steps_dec = -Integer.parseInt(edit_steps.getText().toString());
                     MainActivity.handler.obtainMessage(MESSAGE_WRITE, "<b_lash_dec:" + test_steps_dec + ";>\n").sendToTarget();
-
-
                 }
             }
         });

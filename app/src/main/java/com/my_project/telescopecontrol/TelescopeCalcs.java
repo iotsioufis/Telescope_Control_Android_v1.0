@@ -33,7 +33,7 @@ public class TelescopeCalcs {
     public void Goto(double RA, double DEC, SharedViewModel viewModel) {
         int steps_RA;
         int steps_DEC;
-       // SharedViewModel sharedViewModel = viewModel;
+        // SharedViewModel sharedViewModel = viewModel;
         this.alignment_done = viewModel.get_alignment_done().getValue();
         int RA_gear_teeth = viewModel.getRA_gear_teeth().getValue();
         int DEC_gear_teeth = viewModel.getDEC_gear_teeth().getValue();
@@ -86,7 +86,6 @@ public class TelescopeCalcs {
             DEC_degrees = DEC_degrees + viewModel.get_dec_initial_offset_west().getValue() / DEC_micro_1;
             Log.e(TAG, "alignment started , using West ra offset : " + viewModel.get_ra_initial_offset_west().getValue() + " dec offset: " + viewModel.get_dec_initial_offset_west().getValue() + "\n");
         }
-
 
 
         if (alignment_done) {
@@ -173,8 +172,8 @@ public class TelescopeCalcs {
                     DEC_degrees = new_coords2[1];
 
                     Log.e(TAG, "----->new coords using associated transformation matrix of the nearest point  .\n HA :... " + HA_degrees + " dec :" + DEC_degrees);
-                    Log.e(TAG, decimal_to_dms(HA_degrees/15,"ha"));
-                    Log.e(TAG, decimal_to_dms(DEC_degrees,"dec"));
+                    Log.e(TAG, decimal_to_dms(HA_degrees / 15, "ha"));
+                    Log.e(TAG, decimal_to_dms(DEC_degrees, "dec"));
 
                 }
 
@@ -187,8 +186,8 @@ public class TelescopeCalcs {
         double altitude = (asin(h) * 180) / PI;
         Log.e(TAG, "Altitude :\n " + altitude);
 
-       int RA_steps_at_zero_altitude= get_RA_steps_at_horizon(DEC,viewModel.getLatitute().getValue(),viewModel.getRA_micro_1().getValue());
-       viewModel.set_ra_steps_at_horizon(RA_steps_at_zero_altitude);
+        int RA_steps_at_zero_altitude = get_RA_steps_at_horizon(DEC, viewModel.getLatitute().getValue(), viewModel.getRA_micro_1().getValue());
+        viewModel.set_ra_steps_at_horizon(RA_steps_at_zero_altitude);
 
         if (altitude < 0) {
             MainActivity.handler.obtainMessage(MESSAGE_WRITE, "\nObject is not visible as it is below the horizon !\n").sendToTarget();
@@ -230,9 +229,9 @@ public class TelescopeCalcs {
 
             }
 
-            int [] backlash_fixes=get_nearest_backlash_fixes(HA_degrees,DEC_degrees,viewModel);
-            viewModel.set_ra_backlash_fix( backlash_fixes[0]);
-            viewModel.set_dec_backlash_fix( backlash_fixes[1]);
+            int[] backlash_fixes = get_nearest_backlash_fixes(HA_degrees, DEC_degrees, viewModel);
+            viewModel.set_ra_backlash_fix(backlash_fixes[0]);
+            viewModel.set_dec_backlash_fix(backlash_fixes[1]);
 
         /*calculation of how many steps the stepper motors should move
         from the home position to the target with its HA and DEC at that time: */
@@ -254,7 +253,7 @@ public class TelescopeCalcs {
                 is_second_goto_str = "1";
             }
 
-            String command_str = "<move:RA:" + steps_RA + ";DEC:" + steps_DEC + ":" + is_second_goto_str + ":" +  ":"+backlash_fixes[0] +":"+backlash_fixes[1]+";>\n";
+            String command_str = "<move:RA:" + steps_RA + ";DEC:" + steps_DEC + ":" + is_second_goto_str + ":" + ":" + backlash_fixes[0] + ":" + backlash_fixes[1] + ";>\n";
 
             Log.e(TAG, command_str);
             MainActivity.handler.obtainMessage(MESSAGE_WRITE, command_str).sendToTarget();
@@ -262,7 +261,7 @@ public class TelescopeCalcs {
             viewModel.setDEC_micro_1(DEC_micro_1);
             viewModel.setDEC_decimal_transformed(DEC_degrees);
             viewModel.setHA_degrees(HA_degrees);
-            Log.e(TAG, "ra_backlash_fix : " + backlash_fixes[0]+ "   dec_backlash_fix : "+ backlash_fixes[1]);
+            Log.e(TAG, "ra_backlash_fix : " + backlash_fixes[0] + "   dec_backlash_fix : " + backlash_fixes[1]);
 
 
         }
@@ -451,9 +450,8 @@ public class TelescopeCalcs {
 
         Log.e(TAG, "HA (in hours) and DEC after pressesion is calculated :\n " + HA_decimal + " decimal hours\n" + DEC + " decimal degrees\n");
         Log.e(TAG, "HA (in degrees) and DEC after pressesion is calculated :\n " + HA_decimal * 15 + " decimal hours\n" + DEC + " decimal degrees\n");
-        Log.e(TAG, decimal_to_dms(HA_decimal,"ha"));
-        Log.e(TAG, decimal_to_dms(DEC,"dec"));
-
+        Log.e(TAG, decimal_to_dms(HA_decimal, "ha"));
+        Log.e(TAG, decimal_to_dms(DEC, "dec"));
 
 
         double[] coords_with_precession = {HA_decimal, DEC};
@@ -467,33 +465,27 @@ public class TelescopeCalcs {
     }
 
 
-    private int[] get_nearest_backlash_fixes(double HA_degrees,double DEC, SharedViewModel viewModel) {
-        int[] nearest_backlash_fixes={0,0};
+    private int[] get_nearest_backlash_fixes(double HA_degrees, double DEC, SharedViewModel viewModel) {
+        int[] nearest_backlash_fixes = {0, 0};
         if (viewModel.getBacklashfixes().getValue() != null) {
-
             int backlash_points_num = viewModel.getBacklashfixes().getValue().size();
             if (backlash_points_num > 0) {
                 double[] distances = new double[backlash_points_num];
 
-
                 for (int i = 0; i < backlash_points_num; i++) {
 
-                    double saved_point_ha = viewModel.getBacklashfixes().getValue().get(i).get_ha()*PI/180;
-                    double saved_point_dec = viewModel.getBacklashfixes().getValue().get(i).get_dec()*PI/180;
+                    double saved_point_ha = viewModel.getBacklashfixes().getValue().get(i).get_ha() * PI / 180;
+                    double saved_point_dec = viewModel.getBacklashfixes().getValue().get(i).get_dec() * PI / 180;
                     distances[i] = acos(sin((DEC * PI) / 180) * sin(saved_point_dec) + cos((DEC * PI) / 180) * cos(saved_point_dec) * cos((HA_degrees * PI / 180) - saved_point_ha));
-                    distances[i]=toDegrees(distances[i]);
+                    distances[i] = toDegrees(distances[i]);
                     if (!viewModel.getBacklashfixes().getValue().get(i).get_side_of_meridian().equals(viewModel.getSide_of_meridian().getValue())) {
                         distances[i] = distances[i] + 1000;
                     }
-
-
                 }
-
                 OptionalDouble minimum = DoubleStream.of(distances).min();
                 int index_of_nearest = (DoubleStream.of(distances).boxed().collect(Collectors.toList())).indexOf(minimum.getAsDouble());
                 nearest_backlash_fixes[0] = viewModel.getBacklashfixes().getValue().get(index_of_nearest).get_ra_backlash_fix();
                 nearest_backlash_fixes[1] = viewModel.getBacklashfixes().getValue().get(index_of_nearest).get_dec_backlash_fix();
-
             }
         }
         return nearest_backlash_fixes;
@@ -540,38 +532,48 @@ public class TelescopeCalcs {
         return dms_str;
     }
 
-    private int get_RA_steps_at_horizon(double dec,double latitude_degrees,double RA_micro_1){
-        double HA_from_home=0.0;
-        double cosHA_0=-tan(toRadians(latitude_degrees)) * tan(toRadians(dec));
-        double  HA_at_zero_altitude=acos(cosHA_0);
-        HA_at_zero_altitude=toDegrees(HA_at_zero_altitude)/15;
+    private int get_RA_steps_at_horizon(double dec, double latitude_degrees, double RA_micro_1) {
+        double HA_from_home = 0.0;
+        double cosHA_0 = -tan(toRadians(latitude_degrees)) * tan(toRadians(dec));
+        double HA_at_zero_altitude = acos(cosHA_0);
+        HA_at_zero_altitude = toDegrees(HA_at_zero_altitude) / 15;
         if (Double.isNaN(HA_at_zero_altitude)) {
             HA_at_zero_altitude = 11.999; // Nan is produced for the stars near polaris that do not set
 
         }
 
-        Log.e(TAG," HA_at_zero_altitude : "+ HA_at_zero_altitude+"\n");
-        HA_at_zero_altitude=HA_at_zero_altitude*15;
+        Log.e(TAG, " HA_at_zero_altitude : " + HA_at_zero_altitude + "\n");
+        HA_at_zero_altitude = HA_at_zero_altitude * 15;
         if (HA_at_zero_altitude >= 0 && HA_at_zero_altitude < 180) {
-            if (latitude_degrees >= 0) { HA_from_home = 90 - HA_at_zero_altitude; }
-            if (latitude_degrees < 0) {HA_from_home = (-90) + HA_at_zero_altitude; }
+            if (latitude_degrees >= 0) {
+                HA_from_home = 90 - HA_at_zero_altitude;
+            }
+            if (latitude_degrees < 0) {
+                HA_from_home = (-90) + HA_at_zero_altitude;
+            }
         }
 
         if (HA_at_zero_altitude >= 180 && HA_at_zero_altitude <= 360) {
-            if (latitude_degrees >= 0) {HA_from_home = 270 - HA_at_zero_altitude; }
-            if (latitude_degrees < 0) {HA_from_home = (-270) + HA_at_zero_altitude; }
+            if (latitude_degrees >= 0) {
+                HA_from_home = 270 - HA_at_zero_altitude;
+            }
+            if (latitude_degrees < 0) {
+                HA_from_home = (-270) + HA_at_zero_altitude;
+            }
         }
 // add 2 degrees (2/15=0.1333 hours ) so the tracking will continue for (60*(2/15))=8 minutes after the limit has reached .
-        if (latitude_degrees >= 0) {HA_from_home=HA_from_home-0.1333 ;}
-        if (latitude_degrees < 0) {HA_from_home=HA_from_home + 0.1333 ;}
-       int RA_STEPS_at_zero_altitude = (int) (RA_micro_1 * HA_from_home);
-       // int RA_STEPS_at_zero_altitude = (int) (RA_micro_1 *  HA_at_zero_altitude );
-        Log.e(TAG," RA_STEPS_at_zero_altitude : "+ RA_STEPS_at_zero_altitude+"\n");
+        if (latitude_degrees >= 0) {
+            HA_from_home = HA_from_home - 0.1333;
+        }
+        if (latitude_degrees < 0) {
+            HA_from_home = HA_from_home + 0.1333;
+        }
+        int RA_STEPS_at_zero_altitude = (int) (RA_micro_1 * HA_from_home);
+        // int RA_STEPS_at_zero_altitude = (int) (RA_micro_1 *  HA_at_zero_altitude );
+        Log.e(TAG, " RA_STEPS_at_zero_altitude : " + RA_STEPS_at_zero_altitude + "\n");
         return RA_STEPS_at_zero_altitude;
 
     }
-
-
 
 
 }

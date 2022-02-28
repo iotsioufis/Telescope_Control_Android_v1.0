@@ -75,7 +75,7 @@ public class ExtraAlignments {
         if (side_of_meridian.equals("east")) {
             dif_in_DEC_degrees = -dif_in_DEC_degrees;
         }
-        boolean calculate_3rd_star = false;
+
 
         new_alignmentPoint = new AlignmentPoint(name, viewModel.getSide_of_meridian().getValue(), ((ra * 15.0d) * PI) / 180.0d, (((-ha_degrees) + dif_in_RA_degrees) * PI) / 180.0d, (dec * PI) / 180.0d, ((dec_transformed + dif_in_DEC_degrees) * PI) / 180.0d, ((15.0d * time_difference) * PI) / 180.0d);
         double new_alignmentPoint_ra = new_alignmentPoint.get_non_transformed_ra();
@@ -88,7 +88,10 @@ public class ExtraAlignments {
             double saved_centroid_ra = viewModel.getAlignmentcentroids().getValue().get(i).centroid_ra;
             double saved_centroid_dec = viewModel.getAlignmentcentroids().getValue().get(i).centroid_dec;
             distance[i] = acos((sin(new_alignmentPoint.get_corrected_dec()) * sin(saved_centroid_dec)) + (cos(new_alignmentPoint.get_corrected_dec()) * cos(saved_centroid_dec) * cos(new_alignmentPoint.get_non_transformed_ra() - saved_centroid_ra)));
-            if (!(viewModel.getAlignmentcentroids().getValue().get(i).associated_point_3 == null || 0 == 0 || !(viewModel.getAlignmentcentroids().getValue().get(i).associated_point_1.getName().equals(new_alignmentPoint.getName()) || viewModel.getAlignmentcentroids().getValue().get(i).associated_point_2.getName().equals(new_alignmentPoint.getName()) || viewModel.getAlignmentcentroids().getValue().get(i).associated_point_3.getName().equals(new_alignmentPoint.getName())))) {
+            if (!(viewModel.getAlignmentcentroids().getValue().get(i).associated_point_3 == null || 0 == 0
+                    || !(viewModel.getAlignmentcentroids().getValue().get(i).associated_point_1.getName().equals(new_alignmentPoint.getName())
+                    || viewModel.getAlignmentcentroids().getValue().get(i).associated_point_2.getName().equals(new_alignmentPoint.getName())
+                    || viewModel.getAlignmentcentroids().getValue().get(i).associated_point_3.getName().equals(new_alignmentPoint.getName())))) {
                 distance[i] = distance[i] + 1000.0d;
             }
             if (!viewModel.getSide_of_meridian().getValue().equals(viewModel.getAlignmentcentroids().getValue().get(i).side_of_meridian)) {

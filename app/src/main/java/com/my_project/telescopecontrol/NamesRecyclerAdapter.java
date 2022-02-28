@@ -94,16 +94,20 @@ public class NamesRecyclerAdapter extends RecyclerView.Adapter<NamesRecyclerAdap
         return single_result;
     }
 
+       //filtering logic:
     private final Filter starFilter = new Filter() {
         @Override
         protected FilterResults performFiltering(CharSequence constraint) {
             List<star> filteredList = new ArrayList<>();
             if (constraint == null || constraint.length() == 0) {
+                //show eveything if nothing is typed in the search field
                 filteredList.addAll(starobjectsfull);
             } else {
+                //turn everything typed to lowercase and then remove any spaces with trim()
                 String filterPattern = constraint.toString().toLowerCase().trim();
 
                 for (star star : starobjectsfull) {
+                    // add to filst if the pattern of object is matching with the search typed string
                     if (star.getName_ascii().toLowerCase().contains(filterPattern)) {
                         filteredList.add(star);
                     }
@@ -116,6 +120,7 @@ public class NamesRecyclerAdapter extends RecyclerView.Adapter<NamesRecyclerAdap
         }
 
         @Override
+        //publish the results to the UI thread:
         protected void publishResults(CharSequence constraint, FilterResults results) {
             starobjects.clear();
             starobjects.addAll((List) results.values);

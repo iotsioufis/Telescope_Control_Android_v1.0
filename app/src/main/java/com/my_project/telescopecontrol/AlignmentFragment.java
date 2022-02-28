@@ -689,12 +689,10 @@ public class AlignmentFragment extends Fragment {
                 }
                 centroid_west.associated_point_1.associate_matrix(transformation_matrix_west);
                 centroid_west.associated_point_2.associate_matrix(transformation_matrix_west);
-                centroid_west.associated_point_1.associate_offset_matrix(null);
-                centroid_west.associated_point_2.associate_offset_matrix(null);
+
                 if (temp_alignment_points_west.size() == 3) {
                     centroid_west.associated_point_3.associate_matrix(transformation_matrix_west);
-                    centroid_west.associated_point_3.associate_offset_matrix(null);
-                }
+                                    }
                 centroid_west.is_initial_alignment_centroid=true;
                 centroid_west.side_of_meridian = "west";
                 temp_alignment_centroids.add(centroid_west);
@@ -718,11 +716,9 @@ public class AlignmentFragment extends Fragment {
                 }
                 centroid_east.associated_point_1.associate_matrix(transformation_matrix_east);
                 centroid_east.associated_point_2.associate_matrix(transformation_matrix_east);
-                centroid_east.associated_point_1.associate_offset_matrix(null);
-                centroid_east.associated_point_2.associate_offset_matrix(null);
+
                 if (temp_alignment_points_east.size() == 3) {
                     centroid_east.associated_point_3.associate_matrix(transformation_matrix_east);
-                    centroid_east.associated_point_3.associate_offset_matrix(null);
                 }
                 centroid_east.side_of_meridian = "east";
                 centroid_east.is_initial_alignment_centroid=true;

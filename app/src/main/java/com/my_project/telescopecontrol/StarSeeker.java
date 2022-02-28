@@ -17,6 +17,9 @@ import java.util.Comparator;
 import java.util.Scanner;
 
 import static java.lang.Math.PI;
+import static java.lang.Math.acos;
+import static java.lang.Math.cos;
+import static java.lang.Math.sin;
 
 public class StarSeeker {
 
@@ -69,7 +72,7 @@ public class StarSeeker {
                 double star_ha_degrees = coords_with_precession[0] * 15.0d;
                 double star_dec_degrees = coords_with_precession[1];
                 double latitude_degrees = viewModel.getLatitute().getValue().doubleValue();
-                double altitude = (Math.asin((Math.sin((latitude_degrees * PI) / 180.0d) * Math.sin((star_dec_degrees * PI) / 180.0d)) + ((Math.cos((latitude_degrees * PI) / 180.0d) * Math.cos((star_dec_degrees * PI) / 180.0d)) * Math.cos((star_ha_degrees * PI) / 180.0d))) * 180.0d) / PI;
+                double altitude = (Math.asin((sin((latitude_degrees * PI) / 180.0d) * sin((star_dec_degrees * PI) / 180.0d)) + ((cos((latitude_degrees * PI) / 180.0d) * cos((star_dec_degrees * PI) / 180.0d)) * cos((star_ha_degrees * PI) / 180.0d))) * 180.0d) / PI;
                 if (star_ha_degrees > 0.0d && star_ha_degrees < 180.0d && altitude > 20.0d && altitude < 75.0d && !starArrayList.get(i).getName_ascii().equals("Polaris") && brightest_stars_counter_west < 50) {
                     starArrayList_west.add(starArrayList.get(i));
 
@@ -119,7 +122,7 @@ public class StarSeeker {
                 double bright_star_ha = brightest_stars_coords_east[i][c];
                 double bright_star_dec = brightest_stars_coords_east[i][1];
                 if (!(bright_star_ha == 0.0d || bright_star_dec == 0.0d)) {
-                    double distance = Math.acos((Math.sin((best_dec * PI) / 180.0d) * Math.sin((bright_star_dec * PI) / 180.0d)) + (Math.cos((best_dec * PI) / 180.0d) * Math.cos((bright_star_dec * PI) / 180.0d) * Math.cos(((best_ha - bright_star_ha) * PI) / 180.0d)));
+                    double distance = acos((sin((best_dec * PI) / 180.0d) * sin((bright_star_dec * PI) / 180.0d)) + (cos((best_dec * PI) / 180.0d) * cos((bright_star_dec * PI) / 180.0d) * cos(((best_ha - bright_star_ha) * PI) / 180.0d)));
                     if (distance < min_distance) {
                         min_distance = distance;
                         min_index = i;
@@ -153,7 +156,8 @@ public class StarSeeker {
             best_coords_for_alignment[1][0] = 90.0d;
             best_coords_for_alignment[1][1] = -50.3d;
             best_coords_for_alignment[2][0] = 33.5d;
-            best_coords_for_alignment[2][1] = -39.2d;}
+            best_coords_for_alignment[2][1] = -39.2d;
+        }
 
         int j = 0;
         while (j < 3) {
@@ -165,7 +169,7 @@ public class StarSeeker {
                 double bright_star_ha = brightest_stars_coords_west[i][0];
                 double bright_star_dec = brightest_stars_coords_west[i][1];
                 if (!(bright_star_ha == 0.0d || bright_star_dec == 0.0d)) {
-                    double distance = Math.acos((Math.sin((best_dec * PI) / 180.0d) * Math.sin((bright_star_dec * PI) / 180.0d)) + (Math.cos((best_dec * PI) / 180.0d) * Math.cos((bright_star_dec * PI) / 180.0d) * Math.cos(((best_ha - bright_star_ha) * PI) / 180.0d)));
+                    double distance = acos((sin((best_dec * PI) / 180.0d) * sin((bright_star_dec * PI) / 180.0d)) + (cos((best_dec * PI) / 180.0d) * cos((bright_star_dec * PI) / 180.0d) * cos(((best_ha - bright_star_ha) * PI) / 180.0d)));
                     if (distance < min_distance) {
                         min_distance = distance;
                         min_index = i;
@@ -204,70 +208,54 @@ public class StarSeeker {
 
     public ArrayList<star> get_nearest_star() {
         String current_side_of_meridian;
-        Type listType;
-        String current_side_of_meridian2 = viewModel.getSide_of_meridian().getValue();
+        current_side_of_meridian = viewModel.getSide_of_meridian().getValue();
         starArrayList_nearest.clear();
-        if (viewModel.get_jsonString_names().getValue() == "") {
+        if (viewModel.get_jsonString_names().getValue().equals("")) {
             InputStream is = context.getResources().openRawResource(R.raw.star_names);
             viewModel.set_jsonString_names(new Scanner(is).useDelimiter("\\A").next());
         }
-        Type listType2 = new TypeToken<ArrayList<star>>() {
+        Type listType = new TypeToken<ArrayList<star>>() {
         }.getType();
-        starArrayList = new Gson().fromJson(viewModel.get_jsonString_names().getValue(), listType2);
-        double d = 15.0d;
-        double target_ra = viewModel.getStar_object().getValue().getRaj2000() * 15.0d;
+        starArrayList = new Gson().fromJson(viewModel.get_jsonString_names().getValue(), listType);
+        double d = 15;
+        double target_ra = viewModel.getStar_object().getValue().getRaj2000() * 15;
         double target_dec = viewModel.getStar_object().getValue().getDecj2000();
         tel_calcs.calculate_coords_with_precession(viewModel.getStar_object().getValue().getRaj2000(), viewModel.getStar_object().getValue().getDecj2000(), viewModel);
         String target_side_of_meridian = viewModel.getSide_of_meridian().getValue();
         int i = 1;
         while (i < viewModel.get_HipHashMap().getValue().size()) {
             if (viewModel.get_HipHashMap().getValue().get(String.valueOf(i)) == null) {
-                current_side_of_meridian = current_side_of_meridian2;
-                listType = listType2;
-            } else if (viewModel.get_HipHashMap().getValue().get(String.valueOf(i)).getMmag() <= 3.91d) {
+
+            } else if (viewModel.get_HipHashMap().getValue().get(String.valueOf(i)).getMmag() <= 3.91) {
                 double catalogue_ra = viewModel.get_HipHashMap().getValue().get(String.valueOf(i)).getRaj2000() * d;
                 double catalogue_dec = viewModel.get_HipHashMap().getValue().get(String.valueOf(i)).getDecj2000();
-                Double distance = Double.valueOf(Math.acos((Math.sin((target_dec * PI) / 180.0d) * Math.sin((catalogue_dec * PI) / 180.0d)) + (Math.cos((target_dec * PI) / 180.0d) * Math.cos((catalogue_dec * PI) / 180.0d) * Math.cos(((target_ra - catalogue_ra) * PI) / 180.0d))));
-                if ((distance.doubleValue() * 180.0d) / PI < 1.0E-5d) {
-                    distance = Double.valueOf(0.0d);
+                Double distance = acos((sin((target_dec * PI) / 180.0d) * sin((catalogue_dec * PI) / 180)) + (cos((target_dec * PI) / 180) * cos((catalogue_dec * PI) / 180) * cos(((target_ra - catalogue_ra) * PI) / 180)));
+                if ((distance * 180) / PI < 1.0E-5d) {
+                    distance = 0.0;
                 }
-                if ((distance.doubleValue() * 180.0d) / PI < 20.0d) {
-                    listType = listType2;
-                    current_side_of_meridian = current_side_of_meridian2;
-                    tel_calcs.calculate_coords_with_precession(((hipObject) viewModel.get_HipHashMap().getValue().get(String.valueOf(i))).getRaj2000(), catalogue_dec, viewModel);
+                if ((distance * 180) / PI < 20) {
+                    tel_calcs.calculate_coords_with_precession(( viewModel.get_HipHashMap().getValue().get(String.valueOf(i))).getRaj2000(), catalogue_dec, viewModel);
                     String catalogue_side_of_meridian = viewModel.getSide_of_meridian().getValue();
                     if (target_side_of_meridian.equals(catalogue_side_of_meridian)) {
-                        ArrayList<star> arrayList = starArrayList_nearest;
-                        String str = catalogue_side_of_meridian;
-                        arrayList.add(new star("hip:" + i, "", "", "", "", "unavailable", "", 0, ((hipObject) viewModel.get_HipHashMap().getValue().get(String.valueOf(i))).getMmag(), "", "0", 0, catalogue_ra, catalogue_dec, "", ""));
-
-                        ArrayList<star> arrayList2 = starArrayList_nearest;
-                        arrayList2.get(arrayList2.size() + -1).setDistance_from_nearest_selected(Double.valueOf((distance.doubleValue() * 180.0d) / PI));
+                        starArrayList_nearest.add(new star("hip:" + i, "", "", "", "", "unavailable", "", 0, ((hipObject) viewModel.get_HipHashMap().getValue().get(String.valueOf(i))).getMmag(), "", "0", 0, catalogue_ra, catalogue_dec, "", ""));
+                        starArrayList_nearest.get(starArrayList_nearest.size() -1).setDistance_from_nearest_selected((distance * 180) / PI);
                     }
-                } else {
-                    current_side_of_meridian = current_side_of_meridian2;
-                    listType = listType2;
                 }
-            } else {
-                current_side_of_meridian = current_side_of_meridian2;
-                listType = listType2;
             }
             i++;
-            listType2 = listType;
-            current_side_of_meridian2 = current_side_of_meridian;
-            d = 15.0d;
+
         }
-        String current_side_of_meridian3 = current_side_of_meridian2;
+
 
         for (int j = 0; j < starArrayList.size(); j++) {
             if (starArrayList.get(j).getHip() != null) {
                 for (int z = 0; z < starArrayList_nearest.size(); z++) {
                     if (("hip:" + starArrayList.get(j).getHip()).equals(starArrayList_nearest.get(z).getName_ascii())) {
-                        Double distance2 = Double.valueOf(Math.acos((Math.sin((target_dec * PI) / 180.0d) * Math.sin((starArrayList.get(j).getDecj2000() * PI) / 180.0d)) + (Math.cos((target_dec * PI) / 180.0d) * Math.cos((starArrayList.get(j).getDecj2000() * PI) / 180.0d) * Math.cos(((target_ra - (starArrayList.get(j).getRaj2000() * 15.0d)) * PI) / 180.0d))));
-                        if (Double.isNaN(distance2.doubleValue())) {
-                            distance2 = Double.valueOf(0.0d);
+                        Double distance2 = acos((sin((target_dec * PI) / 180) * sin((starArrayList.get(j).getDecj2000() * PI) / 180)) + (cos((target_dec * PI) / 180) * cos((starArrayList.get(j).getDecj2000() * PI) / 180) * cos(((target_ra - (starArrayList.get(j).getRaj2000() * 15)) * PI) / 180)));
+                        if (Double.isNaN(distance2)) {
+                            distance2 = 0.0;
                         }
-                        starArrayList.get(j).setDistance_from_nearest_selected(Double.valueOf((distance2.doubleValue() * 180.0d) / PI));
+                        starArrayList.get(j).setDistance_from_nearest_selected((distance2 * 180) / PI);
                         starArrayList_nearest.set(z, starArrayList.get(j));
                     }
                 }
@@ -284,7 +272,7 @@ public class StarSeeker {
             String distance_str = df_distance.format(starArrayList_nearest.get(i2).getDistance_from_nearest_Selected());
             starArrayList_nearest.get(i2).setName_ascii(starArrayList_nearest.get(i2).getName_ascii() + "\ndistance :      " + distance_str + "° \nmagnitude :    " + df_mag.format(starArrayList_nearest.get(i2).getMmag()));
         }
-        viewModel.setSide_of_meridian(current_side_of_meridian3);
+        viewModel.setSide_of_meridian(current_side_of_meridian);
         return starArrayList_nearest;
     }
 

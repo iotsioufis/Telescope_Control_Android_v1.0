@@ -106,8 +106,8 @@ public class NearestStarSuggestionFragment extends Fragment implements NamesRecy
             Runnable runnable_load_hip = new Runnable() {
                 @Override
                 public void run() {
-                                    /*if the hashmap containining the hipparcos data is not created,read the json file and store the date to the hashmap.
-                                 if the hashmap is already created do not repeate its costly creation : */
+                    /*if the hashmap containining the hipparcos data is not created,read the json file and store the date to the hashmap.
+                    if the hashmap is already created do not repeate its costly creation : */
                     is_hip = getResources().openRawResource(R.raw.hip);
                     JsonReader reader = new JsonReader(new InputStreamReader(is_hip));
                     JsonToken token;
